@@ -1,0 +1,23 @@
+
+#ifndef MAIN_H
+#define MAIN_H
+
+#include "argument_proccessing.h"
+#include "include"
+
+// Command line arguments
+
+const OptionDef Options[] =
+{
+    {"--test",     unit_test},
+    {"-t",         unit_test},
+    {"/t",         unit_test},
+
+    {"--help",     print_help},
+    {"-h",         print_help},
+    {"/h",         print_help}
+};
+
+// Command line arguments
+
+#endif
