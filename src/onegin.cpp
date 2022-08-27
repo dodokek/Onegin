@@ -44,9 +44,9 @@ int sepparate_lines (char *main_str, Line lines_array[])
     {
         current_length++;
 
-        if (*ptr == '\n' || (*ptr == '\r' && *(ptr+1) == EOF))
+        if (*ptr == '\n')
         {
-            *ptr = '\0';
+            *ptr       = '\0';
 
             lines_indx++;
             line_counter++;

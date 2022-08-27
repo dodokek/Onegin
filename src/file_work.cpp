@@ -3,7 +3,7 @@
 
 //-----------------------------------------------------------------------------
 
-FILE* get_file(const char file_name[], char* mode)
+FILE* get_file(const char file_name[], const char* mode)
 {
     printf("File name is %s\n", file_name);
 
