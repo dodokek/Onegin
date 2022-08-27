@@ -8,13 +8,14 @@ int start_onegin()
     FILE *input_file  = get_file ("data//input.txt", "r");
     FILE *output_file = get_file ("data//output.txt", "w");
 
-    char *main_str = nullptr;
+    char *main_str    = nullptr;
+    int  symbols_read = 0;
 
-    main_str = read_file (input_file);
+    symbols_read = read_file (input_file, &main_str);
 
     Line lines_array[MAX_LINES] = {};
 
-    int line_amount = sepparate_lines (main_str, lines_array);
+    int line_amount = sepparate_lines (main_str, lines_array, symbols_read);
 
     clear_spaces (lines_array, line_amount);
 
@@ -32,35 +33,40 @@ int start_onegin()
 }
 
 
-int sepparate_lines (char *main_str, Line lines_array[])
+int sepparate_lines (char *main_str, Line lines_array[], int symbols_read)
 {
-    int current_length = 0;
-    int lines_indx     = 0;
-    int line_counter   = 1;
+    int lines_indx = 0;
 
     lines_array[lines_indx].begin_ptr = main_str;
 
-    for(char *ptr = main_str; *ptr != EOF; ptr++)
+    for (int cur_sym = 0; cur_sym < symbols_read; cur_sym++)
     {
-        current_length++;
+        char *cur_ptr = main_str + cur_sym;
 
-        if (*ptr == '\n')
+        if (*cur_ptr == '\n')
         {
-            *ptr       = '\0';
+            *cur_ptr = '\0';
+            int tmp_len = -1;
 
-            lines_indx++;
-            line_counter++;
+            cur_ptr--;
 
-            ptr++;
+            while (*cur_ptr != '\0' && cur_ptr != main_str)
+            {
+                tmp_len++;
+                cur_ptr--;
+            }
 
-            lines_array[lines_indx].length    = current_length;
-            lines_array[lines_indx].begin_ptr = ptr;
-
-            current_length = 0;
+            if (tmp_len != 0)
+            {
+                lines_array[lines_indx].begin_ptr = cur_ptr + 1;
+                lines_array[lines_indx].length    = tmp_len;
+                lines_indx++;
+                puts(cur_ptr + 1);
+            }
         }
-    }
 
-    return line_counter;
+    }
+    return lines_indx + 1;
 }
 
 
@@ -85,24 +91,6 @@ void clear_spaces (Line lines_array[], int lines_amount)
     }
 }
 
-
-void bubble_sort (Line lines_array[], int lines_amount)
-{
-    for (int i = 0; i < lines_amount; i++)
-    {
-        for (int lap = 0; lap < lines_amount - i - 1; lap++)
-        {
-            if (strcmp (lines_array[lap].begin_ptr, lines_array[lap+1].begin_ptr) > 0)
-            {
-                Line tmp = lines_array[lap];
-
-                lines_array[lap] = lines_array[lap + 1];
-
-                lines_array[lap + 1] = tmp;
-            }
-        }
-    }
-}
 
 void write_result_in_file (Line lines_array[], int lines_amount, FILE* output_file)
 {

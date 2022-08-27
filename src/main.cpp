@@ -6,8 +6,6 @@
 
 int main()
 {
-    setlocale(LC_ALL, "Russian");
-
     start_onegin();
 }
 
