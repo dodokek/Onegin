@@ -19,7 +19,7 @@ int start_onegin()
 
     clear_spaces (lines_array, line_amount);
 
-    bubble_sort  (lines_array, line_amount);
+    //bubble_sort  (lines_array, line_amount);
 
     print_lines  (lines_array, line_amount);
 
@@ -56,12 +56,15 @@ int sepparate_lines (char *main_str, Line lines_array[], int symbols_read)
                 cur_ptr--;
             }
 
-            if (tmp_len != 0)
+            if (lines_indx != 0)
             {
                 lines_array[lines_indx].begin_ptr = cur_ptr + 1;
                 lines_array[lines_indx].length    = tmp_len;
                 lines_indx++;
-                puts(cur_ptr + 1);
+            }
+            else
+            {
+                lines_indx++;
             }
         }
 
@@ -72,11 +75,12 @@ int sepparate_lines (char *main_str, Line lines_array[], int symbols_read)
 
 void print_lines (Line lines_array[], int lines_amount)
 {
-    printf ("%d\n", lines_amount);
+    printf ("Lines amount:%d\n", lines_amount);
 
     for (int i = 0; i < lines_amount; i++)
     {
-        puts (lines_array[i].begin_ptr);
+        puts   (lines_array[i].begin_ptr);
+        printf ("%d\n", lines_array[i].length);
     }
 }
 
@@ -87,9 +91,14 @@ void clear_spaces (Line lines_array[], int lines_amount)
 
     for (int i = 0; i < lines_amount; i++)
     {
-        while(*lines_array[i].begin_ptr == ' ') lines_array[i].begin_ptr++, printf ("Deleting space\n");
+        while(*lines_array[i].begin_ptr == ' ')
+        {
+            lines_array[i].begin_ptr++;
+            printf ("Deleting space\n");
+        }
     }
 }
+
 
 
 void write_result_in_file (Line lines_array[], int lines_amount, FILE* output_file)
