@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "include/main.h"
+#include "include/onegin.h"
 
 int main()
 {
