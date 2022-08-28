@@ -9,8 +9,8 @@ void bubble_sort (Line lines_array[], int lines_amount)
     {
         for (int lap = 0; lap < lines_amount - i - 1; lap++)
         {
-            printf("%s %s %d\n", lines_array[lap].begin_ptr, lines_array[lap+1].begin_ptr,  reverse_strcmp (lines_array[lap].begin_ptr,   lines_array[lap].length,
-                                                lines_array[lap+1].begin_ptr, lines_array[lap+1].length));
+            //printf("%s %s %d\n", lines_array[lap].begin_ptr, lines_array[lap+1].begin_ptr,  reverse_strcmp (lines_array[lap].begin_ptr,   lines_array[lap].length,
+            //                                    lines_array[lap+1].begin_ptr, lines_array[lap+1].length));
 
             if (reverse_strcmp (lines_array[lap].begin_ptr,   lines_array[lap].length,
                                 lines_array[lap+1].begin_ptr, lines_array[lap+1].length) > 0)
@@ -28,7 +28,7 @@ void bubble_sort (Line lines_array[], int lines_amount)
 
 int reverse_strcmp (char *str_first, int length_first, char *str_second, int length_second)
 {
-    printf("Strlen %d\n", length_first);
+    //printf("Strlen %d\n", length_first);
 
     if (length_first == 0)  return -1;
     if (length_second == 0) return 1;

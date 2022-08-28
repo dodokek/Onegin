@@ -1,6 +1,8 @@
 #ifndef ONEGIN_H
 #define ONEGIN_H
 
+#include <assert.h>
+
 #include "file_work.h"
 #include "sort.h"
 

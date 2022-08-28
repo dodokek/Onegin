@@ -19,11 +19,11 @@ int start_onegin()
 
     clear_spaces (lines_array, line_amount);
 
-    //bubble_sort  (lines_array, line_amount);
+    bubble_sort  (lines_array, line_amount);
 
     print_lines  (lines_array, line_amount);
 
-    write_result_in_file (lines_array, line_amount, output_file);
+    //write_result_in_file (lines_array, line_amount, output_file);
 
     free   (main_str);
     fclose (input_file);
@@ -35,52 +35,46 @@ int start_onegin()
 
 int sepparate_lines (char *main_str, Line lines_array[], int symbols_read)
 {
-    int lines_indx = 0;
+    assert (main_str != NULL && lines_array != NULL && symbols_read > 0);
 
-    lines_array[lines_indx].begin_ptr = main_str;
+    int lines_indx = 0, cur_len = 0;
 
-    for (int cur_sym = 0; cur_sym < symbols_read; cur_sym++)
+    char *cur_ptr = main_str;
+
+    for (int counter = 0; counter < symbols_read; counter++, cur_ptr++)
     {
-        char *cur_ptr = main_str + cur_sym;
-
-        if (*cur_ptr == '\n')
-        {
-            *cur_ptr = '\0';
-            int tmp_len = -1;
-
-            cur_ptr--;
-
-            while (*cur_ptr != '\0' && cur_ptr != main_str)
+        cur_len++;
+                                                                                             //01234
+        if (*cur_ptr == '\n')                                                                //abcd\ndef\n
+        {                                                                                    //12345
+            if (cur_len > 1)
             {
-                tmp_len++;
-                cur_ptr--;
-            }
+                lines_array[lines_indx].begin_ptr = cur_ptr - cur_len + 1;
+                lines_array[lines_indx].length    = cur_len;
+                *cur_ptr = '\0';
 
-            if (lines_indx != 0)
-            {
-                lines_array[lines_indx].begin_ptr = cur_ptr + 1;
-                lines_array[lines_indx].length    = tmp_len;
+                puts (lines_array[lines_indx].begin_ptr);
+
                 lines_indx++;
-            }
-            else
-            {
-                lines_indx++;
+                cur_len = 0;
             }
         }
-
     }
-    return lines_indx + 1;
+
+
+    return lines_indx;
 }
 
 
 void print_lines (Line lines_array[], int lines_amount)
 {
-    printf ("Lines amount:%d\n", lines_amount);
+    assert (lines_array != NULL && lines_amount > 0);
 
     for (int i = 0; i < lines_amount; i++)
     {
+        //printf ("Line length %d\n", lines_array[i].length);
         puts   (lines_array[i].begin_ptr);
-        printf ("%d\n", lines_array[i].length);
+
     }
 }
 
