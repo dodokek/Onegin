@@ -2,6 +2,7 @@
 #define ONEGIN_H
 
 #include <assert.h>
+#include <TXlib.h>
 
 #include "file_work.h"
 #include "sort.h"

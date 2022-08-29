@@ -16,16 +16,16 @@ struct Line
 
 //-----------------------------------------------------------------------------
 
-void bubble_sort (Line lines_array[], int lines_amount);
+void bubble_sort (Line lines_array[], int lines_amount, int (*comparator)(char *str_first, int len_first, char *str_second, int len_second));
 
-void reverse_bubble_sort (Line lines_array[], int lines_amount);
-
-int reverse_strcmp (char *str_first, int length_first, char *str_second, int length_second);
+int reverse_strcmp (char *str_first, int len_first, char *str_second, int len_second);
 
 void skip_none_letters (char **str_ptr);
 
+int forward_strcmp(char *str_first, int len_first, char *str_second, int len_second);
+
 //-----------------------------------------------------------------------------
 
-const char SKIP_SYMBOLS[] = {'.', ',', '!', '?', ';', ':', ' ', 39, 22};
+const char SKIP_SYMBOLS[] = {'.', ',', '!', '?', ';', ':', ' '};
 
 #endif

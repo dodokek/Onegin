@@ -3,8 +3,7 @@
 
 //-----------------------------------------------------------------------------
 
-void bubble_sort (Line lines_array[], int lines_amount,
-                  int (*comparator)(char *str_first, int len_first, char *str_second, int len_second))
+void bubble_sort (Line lines_array[], int lines_amount, int (*func)(char *str_first, int len_first, char *str_second, int len_second))
 {
     for (int i = 0; i < lines_amount; i++)
     {
@@ -13,7 +12,7 @@ void bubble_sort (Line lines_array[], int lines_amount,
             //printf("%s %s %d\n", lines_array[lap].begin_ptr, lines_array[lap+1].begin_ptr,  reverse_strcmp (lines_array[lap].begin_ptr,   lines_array[lap].length,
             //                                    lines_array[lap+1].begin_ptr, lines_array[lap+1].length));
 
-            if (comparator (lines_array[lap].begin_ptr,   lines_array[lap].length,
+            if (func (lines_array[lap].begin_ptr,   lines_array[lap].length,
                       lines_array[lap+1].begin_ptr, lines_array[lap+1].length) > 0)
             {
                 // swap_lines
@@ -35,7 +34,7 @@ int reverse_strcmp (char *str_first, int len_first, char *str_second, int len_se
     if (len_second == 0) return 1;
 
     char *cur_ptr_1 = str_first  + len_first  - 1;
-    char *cur_ptr_2 = str_second + len_second - 1;
+    char *cur_ptr_2 = str_second + length_second - 1;
 
     skip_none_letters (&cur_ptr_1);
     skip_none_letters (&cur_ptr_2);
@@ -58,7 +57,7 @@ void skip_none_letters (char **str_ptr)
     {
         if (strchr (SKIP_SYMBOLS, **str_ptr))
         {
-            printf("Trimming char %c\n", **str_ptr);
+            //printf("Trimming char %c\n", **str_ptr);
             (*str_ptr)--;
             continue;
         }

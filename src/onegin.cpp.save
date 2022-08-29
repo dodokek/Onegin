@@ -57,12 +57,18 @@ int sepparate_lines (char *main_str, Line lines_array[], int symbols_read)
                                                                                              //01234
         if (*cur_ptr == '\n')                                                                //abcd\ndef\n
         {                                                                                    //\n
-            if (cur_len > 1)                                                                 //abacaba
+            if (cur_len > 0)                                                                 //abacaba
             {
                 lines_array[lines_indx].begin_ptr = cur_ptr - cur_len + 1;
                 lines_array[lines_indx].length    = cur_len;
                 *cur_ptr = '\0';
+
+                //??
+
+                //puts (lines_array[lines_indx].begin_ptr);
+
                 lines_indx++;
+
             }
             cur_len = 0;
         }
@@ -89,7 +95,7 @@ void print_lines (Line lines_array[], int lines_amount)
 
 void trim_left (Line lines_array[], int lines_amount)
 {
-    printf ("Lines amount: %d\n", lines_amount);
+    //printf ("Lines amount: %d\n", lines_amount);
 
     for (int i = 0; i < lines_amount; i++)
     {
