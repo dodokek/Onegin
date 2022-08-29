@@ -10,18 +10,10 @@ void bubble_sort (Line lines_array[], int lines_amount,
     {
         for (int lap = 0; lap < lines_amount - i - 1; lap++)
         {
-            //printf("%s %s %d\n", lines_array[lap].begin_ptr, lines_array[lap+1].begin_ptr,  reverse_strcmp (lines_array[lap].begin_ptr,   lines_array[lap].length,
-            //                                    lines_array[lap+1].begin_ptr, lines_array[lap+1].length));
-
             if (comparator (lines_array[lap].begin_ptr,   lines_array[lap].length,
-                      lines_array[lap+1].begin_ptr, lines_array[lap+1].length) > 0)
+                            lines_array[lap+1].begin_ptr, lines_array[lap+1].length) > 0)
             {
-                // swap_lines
-                Line tmp = lines_array[lap];
-
-                lines_array[lap] = lines_array[lap + 1];
-
-                lines_array[lap + 1] = tmp;
+                swap_lines(&lines_array[lap], &lines_array[lap+1]);
             }
         }
     }
@@ -80,6 +72,15 @@ int forward_strcmp(char *str_first, int len_first, char *str_second, int len_sec
     }
 
     return 0;
+}
 
+
+void swap_lines(Line *line_1, Line *line_2)
+{
+    Line tmp = *line_1;
+
+    *line_1 = *line_2;
+
+    *line_2 = tmp;
 }
 

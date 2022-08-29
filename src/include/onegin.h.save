@@ -2,14 +2,14 @@
 #define ONEGIN_H
 
 #include <assert.h>
-//#include <TXlib.h>
+#include <TXlib.h>
 
 #include "file_work.h"
 #include "sort.h"
 
 int start_onegin();
 
-int separate_lines (char *buffer, Line lines_array[], int symbols_read);
+int separate_lines (char *main_str, Line lines_array[], int symbols_read);
 
 void print_single_line (Line *cur_line);
 
@@ -21,7 +21,7 @@ void trim_right (Line lines_array[], int lines_amount);
 
 void write_result_in_file (Line lines_array[], int lines_amount, FILE* output_file);
 
-void calloc_lines_array(char *buffer, Line **lines_array);
+void calloc_lines_array(main_str, &lines_array);
 
 //-----------------------------------------------------------------------------
 

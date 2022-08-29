@@ -21,14 +21,14 @@ FILE* get_file(const char file_name[], const char* mode)
 
 //
 
-int read_file(FILE* file, char **main_str)
+int read_file(FILE* file, char **buffer)
 {
     fseek (file, 0L, SEEK_END);
     int file_len = ftell (file);
     fseek (file, 0L, SEEK_SET);
 
-    *main_str = (char*) calloc(sizeof(char), file_len);
-    int symbols_read = fread (*main_str, sizeof(char), file_len, file);
+    *buffer = (char*) calloc(sizeof(char), file_len);
+    int symbols_read = fread (*buffer, sizeof(char), file_len, file);
 
     return symbols_read;
 }
