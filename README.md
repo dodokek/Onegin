@@ -8,9 +8,9 @@ This programm is capable of:
 ## Installation
 All installation is made by makefiles:
 ~~~
+git clone https://github.com/dodokek/Onegin.git
 cd src
 make
-main.exe
 ~~~
 ## Options
 This programm allows you efficiently read the text files and then sort the lines in it.
@@ -21,6 +21,9 @@ main.exe -f
 ~~~
 ### Backward sorting
 Strings are being sorted by their end, excluding symbols such as '!', ';', etc.
+~~~
+main.exe -b
+~~~
 
 ## To be continued
 
