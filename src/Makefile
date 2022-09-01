@@ -13,9 +13,7 @@ SORT   = sort
 
 #Body
 
-all : $(MAIN)
-
-$(MAIN)     : $(MAIN).o $(ONEGIN).o $(FILE_W).o $(SORT).o 
+all : $(MAIN).o $(ONEGIN).o $(FILE_W).o $(SORT).o 
 	$(CC) $(CFLAGS) $^ -o $@   
 
 $(MAIN).o   : $(MAIN).cpp
