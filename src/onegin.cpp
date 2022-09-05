@@ -45,7 +45,6 @@ int start_onegin()
 
 int separate_lines (char *buffer, Line lines_array[], int symbols_read)
 {
-    __TRACK__
     assert (buffer != NULL && lines_array != NULL && symbols_read > 0);
 
     int lines_indx = 0, cur_len = 0;
@@ -118,6 +117,7 @@ void write_result_in_file (Line lines_array[], int lines_amount, FILE* output_fi
 
 void calloc_lines_array(char *buffer, Line **lines_array)
 {
+    __TRACKBEGIN__
     int line_counter = 0;
 
     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
@@ -126,7 +126,7 @@ void calloc_lines_array(char *buffer, Line **lines_array)
     }
 
     *lines_array = (Line*) calloc(sizeof(Line), line_counter);
-
+    __TRACKEND__
     return;
 }
 
