@@ -2,10 +2,13 @@
 #define ONEGIN_H
 
 #include <assert.h>
-//#include <TXlib.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
 #include "file_work.h"
 #include "sort.h"
+#include "log.h"
 
 int start_onegin();
 

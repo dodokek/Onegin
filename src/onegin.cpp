@@ -5,11 +5,15 @@
 
 int start_onegin()
 {
+
+
     FILE *input_file  = get_file ("data//input.txt", "r");
     FILE *output_file = get_file ("data//output.txt", "w");
 
     // return FILE_OPEN_ERROR;
     //
+
+
 
     char *buffer    = nullptr;
     int  symbols_read = 0;
@@ -41,6 +45,7 @@ int start_onegin()
 
 int separate_lines (char *buffer, Line lines_array[], int symbols_read)
 {
+    __TRACK__
     assert (buffer != NULL && lines_array != NULL && symbols_read > 0);
 
     int lines_indx = 0, cur_len = 0;

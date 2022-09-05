@@ -24,8 +24,6 @@ void process_arguments (int                    argc,      const char* argv[],
 {
     assert (argc > 0 && argv != NULL && Options != NULL && options_range < INF);
 
-    int count_processed_options = 0;
-
     for (int argc_pos = 0; argc_pos < argc; argc_pos++)
     {
         for (int i = 0; i < options_range; i++)
