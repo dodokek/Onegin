@@ -16,7 +16,9 @@ struct Line
 
 //-----------------------------------------------------------------------------
 
-void bubble_sort (Line lines_array[], int lines_amount, int (*comparator)(char *str_first, int len_first, char *str_second, int len_second));
+void bubble_sort (Line lines_array[], int lines_amount, int (*comparator)(char *str_first, int len_first, char *str_second, int len_second));void bubble_sort (Line lines_array[], int lines_amount, int (*comparator)(char *str_first, int len_first, char *str_second, int len_second));
+
+void quick_sort (Line lines_array[], int lines_amount, int (*comparator)(char *str_first, int len_first, char *str_second, int len_second));void bubble_sort (Line lines_array[], int lines_amount, int (*comparator)(char *str_first, int len_first, char *str_second, int len_second));
 
 int reverse_strcmp (char *str_first, int len_first, char *str_second, int len_second);
 
