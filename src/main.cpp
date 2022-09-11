@@ -2,7 +2,8 @@
 #include "include/onegin.h"
 #include "include/argument_proccessing.h"
 #include "include/log.h"
-#include <TXLib.h>
+
+//#include <TXLib.h>
 
 // Command line arguments
 
@@ -10,7 +11,15 @@ const OptionDef Options[] =
 {
     {"--log",      open_log},
     {"-l",         open_log},
-    {"/l",         open_log}
+    {"/l",         open_log},
+
+    {"--input",     change_input_name},
+    {"-in",         change_input_name},
+    {"/in",         change_input_name},
+
+    {"--output",    change_output_name},
+    {"-ot",         change_output_name},
+    {"/ot",         change_output_name}
 };
 
 // Command line arguments

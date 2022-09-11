@@ -796,3 +796,2225 @@ Run file:	C:\Projects\Onegin\src\main.exe
 Directory:	C:\Projects\Onegin\src
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D7E7 в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 125. Попытка прочесть данные по адресу NULL в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x345C (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует), _doserrno: 2 (No such file or directory). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D7E7 in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (125):
+
+    123:     int line_counter = 0;
+    124: 
+=>  125:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    126:     {
+    127:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D520 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (27):
+
+     25:     Line *lines_array = nullptr;
+     26: 
+=>   27:     calloc_lines_array(buffer, &lines_array);
+     28: 
+     29:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:12:05
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D7E7 в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 125. Попытка прочесть данные по адресу NULL в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x345C (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует), _doserrno: 2 (No such file or directory). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D7E7 in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (125):
+
+    123:     int line_counter = 0;
+    124: 
+=>  125:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    126:     {
+    127:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D520 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (27):
+
+     25:     Line *lines_array = nullptr;
+     26: 
+=>   27:     calloc_lines_array(buffer, &lines_array);
+     28: 
+     29:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:12:05
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x02BF7000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x19D4 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:14:19
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x02BF7000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x19D4 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:14:19
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x001FF000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x3244 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:19:27
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x001FF000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x3244 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:19:27
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x18EC (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует), errno: 2 (No such file or directory), _doserrno: 2 (No such file or directory). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040ABAD in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x756571F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7565B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7565802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0041D50C in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (17):
+
+     15:     FILE *output_file = get_file (OUTPUT_NAME, "w");
+     16: 
+=>   17:     assert(input_file != nullptr && output_file != nullptr);
+     18: 
+     19:     // return FILE_OPEN_ERROR;
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:19:33
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x00B2F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x1FAC (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:19:39
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x00B2F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x1FAC (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:19:39
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x34F0 (Main), errno: 22 (Invalid argument). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040ABAD in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x756571F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7565B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7565802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0041D62C in C:\Projects\Onegin\src\main.exe: separate_lines() at C:/Projects/Onegin/src/onegin.cpp (52):
+
+     50: int separate_lines (char *buffer, Line lines_array[], int symbols_read)
+     51: {
+=>   52:     assert (buffer != NULL && lines_array != NULL && symbols_read > 0);
+     53: 
+     54:     int lines_indx = 0, cur_len = 0;
+
+# 5 0x0041D561 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (31):
+
+     29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+=>   31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+     32: 
+     33:     trim_left (lines_array, line_amount);
+
+# 6 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:22:06
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x1900 (Main), errno: 22 (Invalid argument). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040ABAD in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x756571F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7565B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7565802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0041D62C in C:\Projects\Onegin\src\main.exe: separate_lines() at C:/Projects/Onegin/src/onegin.cpp (52):
+
+     50: int separate_lines (char *buffer, Line lines_array[], int symbols_read)
+     51: {
+=>   52:     assert (buffer != NULL && lines_array != NULL && symbols_read > 0);
+     53: 
+     54:     int lines_indx = 0, cur_len = 0;
+
+# 5 0x0041D561 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (31):
+
+     29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+=>   31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+     32: 
+     33:     trim_left (lines_array, line_amount);
+
+# 6 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:23:56
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x10A8 (Main), errno: 22 (Invalid argument). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040ABAD in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x756571F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7565B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7565802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0041D62C in C:\Projects\Onegin\src\main.exe: separate_lines() at C:/Projects/Onegin/src/onegin.cpp (52):
+
+     50: int separate_lines (char *buffer, Line lines_array[], int symbols_read)
+     51: {
+=>   52:     assert (buffer != NULL && lines_array != NULL && symbols_read > 0);
+     53: 
+     54:     int lines_indx = 0, cur_len = 0;
+
+# 5 0x0041D561 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (31):
+
+     29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+=>   31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+     32: 
+     33:     trim_left (lines_array, line_amount);
+
+# 6 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:25:19
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x0108F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x918 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:27:06
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x0108F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x918 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:27:06
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x3BDC (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует), errno: 2 (No such file or directory), _doserrno: 2 (No such file or directory). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040ABAD in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x756571F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7565B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7565802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0041D50C in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (17):
+
+     15:     FILE *output_file = get_file (OUTPUT_NAME, "w");
+     16: 
+=>   17:     assert(input_file != nullptr && output_file != nullptr);
+     18: 
+     19:     // return FILE_OPEN_ERROR;
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:29:11
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x02CB4000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x3458 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:29:56
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x02CB4000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F52FC (32-bit), Flags: Cmdre0, Thread: 0x3458 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:29:56
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x02C34000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0xEB0 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:37:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:39:05
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x02C34000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0xEB0 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:37:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:39:05
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x02C44000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x2C34 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:39:41, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:39:54
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x02C44000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x2C34 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:39:41, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:39:54
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x0110F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x2CF8 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:40:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:40:43
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x0110F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x2CF8 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:40:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:40:43
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x00A7F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x1404 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:40:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:40:49
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x00A7F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x1404 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:40:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:40:49
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x007EF000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x1320 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:43:48, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:44:10
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x007EF000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x1320 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:43:48, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:44:10
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x0107F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x9D0 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:50:36, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:50:48
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x0107F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x9D0 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:50:36, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:50:48
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x0100F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x2E28 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:50:36, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:52:31
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D80F в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 127. Попытка прочесть данные по адресу 0x0100F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x2E28 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D80F in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (127):
+
+    125:     int line_counter = 0;
+    126: 
+=>  127:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    128:     {
+    129:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:50:36, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:52:31
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x8C0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040ABAD in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x756571F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7565B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7565802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0041D80A in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (124):
+
+    122: void calloc_lines_array(char *buffer, Line **lines_array)
+    123: {
+=>  124:     assert (buffer != nullptr && *lines_array != nullptr);
+    125: 
+    126:     __TRACKBEGIN__
+
+# 5 0x0041D548 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (29):
+
+     27:     Line *lines_array = nullptr;
+     28: 
+=>   29:     calloc_lines_array(buffer, &lines_array);
+     30: 
+     31:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 6 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 17:50:36, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 17:54:22
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x75678994 в функции fgets(). Попытка записать данные по адресу 0x004BF260 в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x2F04 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x75678994 in C:\Windows\System32\msvcrt.dll: fgets()
+
+# 1 0x0041D52D in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (25):
+
+     23: 
+     24:     char *s = "kek";
+=>   25:     fgets (s, 126, input_file);
+     26:     puts(s);
+     27: 
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 18:03:07, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 18:03:11
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x75678994 в функции fgets(). Попытка записать данные по адресу 0x004BF260 в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x2F04 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x75678994 in C:\Windows\System32\msvcrt.dll: fgets()
+
+# 1 0x0041D52D in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (25):
+
+     23: 
+     24:     char *s = "kek";
+=>   25:     fgets (s, 126, input_file);
+     26:     puts(s);
+     27: 
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 18:03:07, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 18:03:11
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x212C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040ABAD in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x756571F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7565B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7565802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0041D896 in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (133):
+
+    131: void calloc_lines_array(char *buffer, Line **lines_array)
+    132: {
+=>  133:     assert (buffer != nullptr && *lines_array != nullptr);
+    134: 
+    135:     __TRACKBEGIN__
+
+# 5 0x0041D5CC in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (38):
+
+     36:     Line *lines_array = nullptr;
+     37: 
+=>   38:     calloc_lines_array(buffer, &lines_array);
+     39: 
+     40:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 6 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 18:03:07, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 18:04:09
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x253C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040ABAD in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x756571F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7565B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7565802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0041D8CE in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (135):
+
+    133: void calloc_lines_array(char *buffer, Line **lines_array)
+    134: {
+=>  135:     assert (buffer != nullptr && *lines_array != nullptr);
+    136: 
+    137:     __TRACKBEGIN__
+
+# 5 0x0041D5CC in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (38):
+
+     36:     Line *lines_array = nullptr;
+     37: 
+=>   38:     calloc_lines_array(buffer, &lines_array);
+     39: 
+     40:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 6 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 18:03:07, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 18:07:40
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x174C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040ABAD in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x756571F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7565B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7565802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0041D8EA in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (136):
+
+    134: {
+    135:     assert (buffer != nullptr);
+=>  136:     assert (*lines_array != nullptr);
+    137: 
+    138:     __TRACKBEGIN__
+
+# 5 0x0041D5CC in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (38):
+
+     36:     Line *lines_array = nullptr;
+     37: 
+=>   38:     calloc_lines_array(buffer, &lines_array);
+     39: 
+     40:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 6 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 18:03:07, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 18:08:35
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D8F5 в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 140. Попытка прочесть данные по адресу 0x0092F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x3008 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D8F5 in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (140):
+
+    138:     int line_counter = 0;
+    139: 
+=>  140:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    141:     {
+    142:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D5CC in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (38):
+
+     36:     Line *lines_array = nullptr;
+     37: 
+=>   38:     calloc_lines_array(buffer, &lines_array);
+     39: 
+     40:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 18:10:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 18:10:19
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041D8F5 в функции calloc_lines_array() в файле C:/Projects/Onegin/src/onegin.cpp на строке 140. Попытка прочесть данные по адресу 0x0092F000 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: Cmdre0, Thread: 0x3008 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041D8F5 in C:\Projects\Onegin\src\main.exe: calloc_lines_array() at C:/Projects/Onegin/src/onegin.cpp (140):
+
+    138:     int line_counter = 0;
+    139: 
+=>  140:     for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
+    141:     {
+    142:         if (*cur_ptr == '\n') line_counter++;
+
+# 1 0x0041D5CC in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (38):
+
+     36:     Line *lines_array = nullptr;
+     37: 
+=>   38:     calloc_lines_array(buffer, &lines_array);
+     39: 
+     40:     int line_amount = separate_lines (buffer, lines_array, symbols_read);
+
+# 2 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (32):
+
+     30:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     31: 
+=>   32:     start_onegin();
+     33: }
+     34: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 11 2022 18:10:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 11 2022 18:10:19
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------

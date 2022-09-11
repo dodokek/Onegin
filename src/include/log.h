@@ -41,7 +41,7 @@
 
 //! \brief Система логирования на создании класса
 
-#define __TRACK__            MakeSpace Tmp (__func__);
+//#define __TRACK__            MakeSpace Tmp (__func__);
 
 //Global/Const-----------------------------------------------------------------
 
@@ -94,7 +94,7 @@ void substract_tree_level (const char* func_name);
 
 //-----------------------------------------------------------------------------
 
-class MakeSpace
+/*class MakeSpace
 {
 
 public:
@@ -121,6 +121,6 @@ public:
 private:
     const char* func_name;
 
-};
+};*/
 
 #endif

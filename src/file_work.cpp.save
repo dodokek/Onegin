@@ -21,7 +21,7 @@ FILE* get_file(const char file_name[], const char* mode)
 
 int read_file(FILE* file, char **buffer)
 {
-    assert (file != nullptr);
+    assert (file != nullptr)
 
     fseek (file, 0L, SEEK_END);
     int file_len = ftell (file);

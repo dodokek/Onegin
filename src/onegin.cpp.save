@@ -3,9 +3,9 @@
 
 //-----------------------------------------------------------------------------
 
-char INPUT_NAME[50]  = "data//input.txt";
+char INPUT_NAME[]  = "data//input.txt";
 
-char OUTPUT_NAME[50] = "data//output.txt";
+char OUTPUT_NAME[] = "data//output.txt";
 
 //-----------------------------------------------------------------------------
 
@@ -18,6 +18,16 @@ int start_onegin()
 
     // return FILE_OPEN_ERROR;
 
+
+    //-----------------------------------------------------------------------------
+
+    char s[150] = "";
+    fgets (s, 126, input_file);
+    puts(s);
+
+    //-----------------------------------------------------------------------------
+
+
     char *buffer = nullptr;
     int  symbols_read = 0;
 
@@ -25,7 +35,7 @@ int start_onegin()
 
     Line *lines_array = nullptr;
 
-    calloc_lines_array(buffer, &lines_array, symbols_read);
+    calloc_lines_array(buffer, &lines_array);
 
     int line_amount = separate_lines (buffer, lines_array, symbols_read);
 
@@ -50,7 +60,7 @@ int separate_lines (char *buffer, Line lines_array[], int symbols_read)
 {
     assert (buffer != nullptr);
     assert (lines_array != NULL);
-    assert (symbols_read > 0);
+    assert (symbols_read > 0)
 
     int lines_indx = 0, cur_len = 0;
 
@@ -120,20 +130,16 @@ void write_result_in_file (Line lines_array[], int lines_amount, FILE* output_fi
 }
 
 
-void calloc_lines_array(char *buffer, Line **lines_array, int symbols_read)
+void calloc_lines_array(char *buffer, Line **lines_array)
 {
-    assert (buffer != nullptr);
+    assert (buffer != nullptr && *lines_array != nullptr);
 
     __TRACKBEGIN__
     int line_counter = 0;
 
-    char *cur_ptr = buffer;
-    char *end_ptr = cur_ptr + symbols_read;
-
-    for (;cur_ptr != end_ptr; cur_ptr++)
+    for (char *cur_ptr = buffer; *cur_ptr != EOF; cur_ptr++)
     {
         if (*cur_ptr == '\n') line_counter++;
-        printf("%c", *cur_ptr);
     }
 
     *lines_array = (Line*) calloc(sizeof(Line), line_counter);
@@ -157,7 +163,6 @@ int change_input_name (int argc, const char* argv[], int pos)
             switch (argument_indx)
             {
                 case 0:
-                    puts(argv[argc_pos]);
                     strcpy(INPUT_NAME, argv[argc_pos]);
                     break;
 
@@ -173,7 +178,7 @@ int change_input_name (int argc, const char* argv[], int pos)
 
     __TRACKEND__
 
-    return argument_indx;
+    return 1;
 }
 
 
@@ -209,7 +214,7 @@ int change_output_name (int argc, const char* argv[], int pos)
 
     __TRACKEND__
 
-    return argument_indx;
+    return 1;
 }
 
 
