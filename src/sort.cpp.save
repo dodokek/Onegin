@@ -21,8 +21,8 @@ void bubble_sort (Line lines_array[], int lines_amount, __COMPARATOR__)
 // I don't fucking know how the hell does this algorithm works man.
 void quick_sort(Line lines_array[], int low, int high, __COMPARATOR__)
 {
-    assert (lines_array != NULL && low >= 0);
-
+    assert ()
+    
     if (low < high)
     {
         int pi = part_it(lines_array, low, high, comparator);
@@ -36,8 +36,6 @@ void quick_sort(Line lines_array[], int low, int high, __COMPARATOR__)
 
 int part_it(Line lines_array[], int low, int high, __COMPARATOR__)
 {
-    assert (lines_array != NULL && low >= 0);
-
     Line pivot = lines_array[high];
 
     int i = (low - 1);

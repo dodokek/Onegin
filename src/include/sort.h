@@ -5,7 +5,9 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
+#define __COMPARATOR__ int (*comparator)(char *str_first, int len_first, char *str_second, int len_second)
 //-----------------------------------------------------------------------------
 
 struct Line
@@ -16,9 +18,11 @@ struct Line
 
 //-----------------------------------------------------------------------------
 
-void bubble_sort (Line lines_array[], int lines_amount, int (*comparator)(char *str_first, int len_first, char *str_second, int len_second));void bubble_sort (Line lines_array[], int lines_amount, int (*comparator)(char *str_first, int len_first, char *str_second, int len_second));
+void bubble_sort (Line lines_array[], int lines_amount, __COMPARATOR__);
 
-void quick_sort (Line lines_array[], int lines_amount, int (*comparator)(char *str_first, int len_first, char *str_second, int len_second));void bubble_sort (Line lines_array[], int lines_amount, int (*comparator)(char *str_first, int len_first, char *str_second, int len_second));
+void quick_sort(Line lines_array[], int low, int high, __COMPARATOR__);
+
+int part_it(Line lines_array[], int low, int high, __COMPARATOR__);
 
 int reverse_strcmp (char *str_first, int len_first, char *str_second, int len_second);
 

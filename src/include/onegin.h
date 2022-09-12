@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <TXlib.h>
 
 #include "file_work.h"
 #include "sort.h"

@@ -3,9 +3,11 @@
 
 //-----------------------------------------------------------------------------
 
-char INPUT_NAME[50]  = "data//input.txt";
+char INPUT_NAME[50]   = "data//input.txt";
 
-char OUTPUT_NAME[50] = "data//output.txt";
+char OUTPUT_NAME[50]  = "data//output.txt";
+
+char SORTING_MODE[50] = "qsort";
 
 //-----------------------------------------------------------------------------
 
@@ -31,7 +33,9 @@ int start_onegin()
 
     trim_left (lines_array, line_amount);
 
-    bubble_sort (lines_array, line_amount, forward_strcmp);
+    //bubble_sort (lines_array, line_amount, forward_strcmp);
+
+    quick_sort (lines_array, 0, line_amount - 1, forward_strcmp);
 
     print_lines (lines_array, line_amount);
 
