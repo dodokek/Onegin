@@ -5,6 +5,8 @@
 
 void bubble_sort (Line lines_array[], int lines_amount, __COMPARATOR__)
 {
+    __TRACKBEGIN__
+    printf ("Using bubble sort\n");
     for (int i = 0; i < lines_amount; i++)
     {
         for (int lap = 0; lap < lines_amount - i - 1; lap++)
@@ -16,12 +18,16 @@ void bubble_sort (Line lines_array[], int lines_amount, __COMPARATOR__)
             }
         }
     }
+    __TRACKEND__
 }
 
 // I don't fucking know how the hell does this algorithm works man.
 void quick_sort(Line lines_array[], int low, int high, __COMPARATOR__)
 {
+    __TRACKBEGIN__
     assert (lines_array != NULL && low >= 0);
+
+    printf ("Ah yes, quicksort\n");
 
     if (low < high)
     {
@@ -31,11 +37,13 @@ void quick_sort(Line lines_array[], int low, int high, __COMPARATOR__)
 
         quick_sort(lines_array, pi + 1, high, comparator);
     }
+    __TRACKEND__
 }
 
 
 int part_it(Line lines_array[], int low, int high, __COMPARATOR__)
 {
+    __TRACKBEGIN__
     assert (lines_array != NULL && low >= 0);
 
     Line pivot = lines_array[high];
@@ -54,6 +62,8 @@ int part_it(Line lines_array[], int low, int high, __COMPARATOR__)
     }
 
     swap_lines(&lines_array[i+1], &lines_array[high]);
+
+    __TRACKEND__
 
     return (i + 1);
 }

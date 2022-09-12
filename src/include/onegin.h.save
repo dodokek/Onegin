@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <TXlib.h>
 
 #include "file_work.h"
 #include "sort.h"
@@ -25,7 +26,7 @@ void trim_right (Line lines_array[], int lines_amount);
 
 void write_result_in_file (Line lines_array[], int lines_amount, FILE* output_file);
 
-void calloc_lines_array(char *buffer, Line **lines_array);
+void calloc_lines_array(char *buffer, Line **lines_array, int symbols_read);
 
 int change_input_name (int argc, const char* argv[], int pos);
 
@@ -33,14 +34,10 @@ int change_output_name (int argc, const char* argv[], int pos);
 
 //-----------------------------------------------------------------------------
 
-const int MAX_LINES = 1000;
-
-char INPUT_NAME[]  = "data//input.txt\0000000000000000000000";
-
-char OUTPUT_NAME[] = "data//output.txt\0000000000000000000000";
-
-//-----------------------------------------------------------------------------
-
+enum sorting_modes
+{
+    BUBBLE
+}
 
 #endif
 

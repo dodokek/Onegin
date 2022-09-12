@@ -3,6 +3,8 @@
 #include "include/argument_proccessing.h"
 #include "include/log.h"
 
+//#include <TXLib.h>
+
 // Command line arguments
 
 const OptionDef Options[] =
@@ -11,17 +13,17 @@ const OptionDef Options[] =
     {"-l",         open_log},
     {"/l",         open_log},
 
-    {"--input",    change_input_name},
-    {"-in",        change_input_name},
-    {"/in",        change_input_name},
+    {"--input",     change_input_name},
+    {"-in",         change_input_name},
+    {"/in",         change_input_name},
 
-    {"--output",   change_output_name},
-    {"-ot",        change_output_name},
-    {"/ot",        change_output_name},
-
-    {"-sort",      choose_sort},
-    {"-s",         choose_sort},
-    {"/s",         choose_sort}
+    {"--output",    change_output_name},
+    {"-ot",         change_output_name},
+    {"/ot",         change_output_name},
+    
+    {"--output",    change_output_name},
+    {"-ot",         change_output_name},
+    {"/ot",         change_output_name}
 };
 
 // Command line arguments

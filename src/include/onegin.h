@@ -32,6 +32,17 @@ int change_input_name (int argc, const char* argv[], int pos);
 
 int change_output_name (int argc, const char* argv[], int pos);
 
+int choose_sort (int argc, const char* argv[], int pos);
+
+//-----------------------------------------------------------------------------
+
+enum sorting_modes
+{
+    BUBBLE_SORT = 1,
+    QUICK_SORT  = 2,
+    MERGE_SORT       // Ha-ha, sometimes
+};
+
 #endif
 
 

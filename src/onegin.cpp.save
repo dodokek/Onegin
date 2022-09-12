@@ -242,8 +242,8 @@ int choose_sort (int argc, const char* argv[], int pos)
             switch (argument_indx)
             {
                 case 0:
-                    if (strcmp ("2", argv[argc_pos])) SORT_MODE = BUBBLE_SORT;
-                    if (strcmp ("1", argv[argc_pos])) SORT_MODE = QUICK_SORT;
+                    if (strcmp ("1", argv[argc_pos])) SORT_MODE = BUBBLE_SORT;
+                    if (strcmp ("2", argv[argc_pos])) SORT_MODE = QUICK_SORT;
                     break;
 
                 default:

@@ -7,8 +7,6 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#include "log.h"
-
 #define __COMPARATOR__ int (*comparator)(char *str_first, int len_first, char *str_second, int len_second)
 
 //-----------------------------------------------------------------------------
