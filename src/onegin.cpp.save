@@ -30,7 +30,7 @@ int start_onegin()
     calloc_lines_array(buffer, &lines_array, symbols_read);
 
     int line_amount = separate_lines (buffer, lines_array, symbols_read);
-
+                                                                                                             
     trim_left (lines_array, line_amount);
 
     switch (SORT_MODE)

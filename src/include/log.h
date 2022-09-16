@@ -47,20 +47,6 @@
 
 //#define __TRACK__            MakeSpace Tmp (__func__);
 
-//Global/Const-----------------------------------------------------------------
-
-static FILE* LOG_FILE = nullptr;
-
-static int LOG_LEVEL = 9;
-
-static const char DEFAULT_LOG_NAME[] = "data//log.txt";
-
-static char ACTIVE_LOGFILE_NAME[] = "log.txt";
-
-static int SPACING = 0;
-
-//Global/Const-----------------------------------------------------------------
-
 //-----------------------------------------------------------------------------
 
 /// \brief Функция для считывания файла, куда будут писаться логи

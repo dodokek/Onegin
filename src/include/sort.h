@@ -2,14 +2,15 @@
 #ifndef SORT_H
 #define SORT_H
 
+#include <assert.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <assert.h>
+#include <ctype.h>
 
 #include "log.h"
 
-#define __COMPARATOR__ int (*comparator)(char *str_first, int len_first, char *str_second, int len_second)
+typedef int (*ComparatorLink)(char *str_first, int len_first, char *str_second, int len_second);
 
 //-----------------------------------------------------------------------------
 
@@ -21,11 +22,11 @@ struct Line
 
 //-----------------------------------------------------------------------------
 
-void bubble_sort (Line lines_array[], int lines_amount, __COMPARATOR__);
+void bubble_sort (Line lines_array[], int lines_amount, ComparatorLink comparator);
 
-void quick_sort(Line lines_array[], int low, int high, __COMPARATOR__);
+void quick_sort(Line lines_array[], int low, int high, ComparatorLink comparator);
 
-int part_it(Line lines_array[], int low, int high, __COMPARATOR__);
+int part_it(Line lines_array[], int low, int high, ComparatorLink comparator);
 
 int reverse_strcmp (char *str_first, int len_first, char *str_second, int len_second);
 

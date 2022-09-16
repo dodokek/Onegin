@@ -3018,3 +3018,293 @@ Run file:	C:\Projects\Onegin\src\main.exe
 Directory:	C:\Projects\Onegin\src
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A0A0 в функции reverse_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 91. Попытка прочесть данные по адресу 0x02C9FFFF в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x27C4 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A0A0 in C:\Projects\Onegin\src\main.exe: reverse_strcmp() at C:/Projects/Onegin/src/sort.cpp (91):
+
+     89:     while (cur_ptr_1 != str_first || cur_ptr_2 != str_second)
+     90:     {
+=>   91:         if (*cur_ptr_1 > *cur_ptr_2) return 1;
+     92:         if (*cur_ptr_1 < *cur_ptr_2) return -1;
+     93: 
+
+# 1 0x00439FB0 in C:\Projects\Onegin\src\main.exe: part_it() at C:/Projects/Onegin/src/sort.cpp (58):
+
+     56:     for (int j = low; j < high; j++)
+     57:     {
+=>   58:         if (comparator (lines_array[j].begin_ptr, lines_array[j].length, pivot.begin_ptr, pivot.length) <= 0)
+     59: 
+     60:         {
+
+# 2 0x00439EB5 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (37):
+
+     35:     if (low < high)
+     36:     {
+=>   37:         int pi = part_it(lines_array, low, high, comparator);
+     38: 
+     39:         quick_sort(lines_array, low, pi - 1, comparator);
+
+# 3 0x00439EFE in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (41):
+
+     39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+=>   41:         quick_sort(lines_array, pi + 1, high, comparator);
+     42:     }
+     43:     __TRACKEND__
+
+# 4 0x00439EFE in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (41):
+
+     39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+=>   41:         quick_sort(lines_array, pi + 1, high, comparator);
+     42:     }
+     43:     __TRACKEND__
+
+# 5 0x00439EFE in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (41):
+
+     39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+=>   41:         quick_sort(lines_array, pi + 1, high, comparator);
+     42:     }
+     43:     __TRACKEND__
+
+# 6 0x00439EFE in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (41):
+
+     39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+=>   41:         quick_sort(lines_array, pi + 1, high, comparator);
+     42:     }
+     43:     __TRACKEND__
+
+# 7 0x00439EDB in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (39):
+
+     37:         int pi = part_it(lines_array, low, high, comparator);
+     38: 
+=>   39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+     41:         quick_sort(lines_array, pi + 1, high, comparator);
+
+# 8 0x00439EDB in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (39):
+
+     37:         int pi = part_it(lines_array, low, high, comparator);
+     38: 
+=>   39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+     41:         quick_sort(lines_array, pi + 1, high, comparator);
+
+# 9 0x00439EDB in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (39):
+
+     37:         int pi = part_it(lines_array, low, high, comparator);
+     38: 
+=>   39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+     41:         quick_sort(lines_array, pi + 1, high, comparator);
+
+#10 0x00439EDB in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (39):
+
+     37:         int pi = part_it(lines_array, low, high, comparator);
+     38: 
+=>   39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+     41:         quick_sort(lines_array, pi + 1, high, comparator);
+
+#11 0x00439EDB in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (39):
+
+     37:         int pi = part_it(lines_array, low, high, comparator);
+     38: 
+=>   39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+     41:         quick_sort(lines_array, pi + 1, high, comparator);
+
+#12 0x004385A2 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (43):
+
+     41: 
+     42:         case QUICK_SORT:
+=>   43:             quick_sort  (lines_array, 0, line_amount - 1, reverse_strcmp);
+     44:             break;
+     45: 
+
+#13 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (42):
+
+     40:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     41: 
+=>   42:     start_onegin();
+     43: }
+     44: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 15:17:22, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 15:18:04
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A0A0 в функции reverse_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 91. Попытка прочесть данные по адресу 0x02C9FFFF в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x27C4 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A0A0 in C:\Projects\Onegin\src\main.exe: reverse_strcmp() at C:/Projects/Onegin/src/sort.cpp (91):
+
+     89:     while (cur_ptr_1 != str_first || cur_ptr_2 != str_second)
+     90:     {
+=>   91:         if (*cur_ptr_1 > *cur_ptr_2) return 1;
+     92:         if (*cur_ptr_1 < *cur_ptr_2) return -1;
+     93: 
+
+# 1 0x00439FB0 in C:\Projects\Onegin\src\main.exe: part_it() at C:/Projects/Onegin/src/sort.cpp (58):
+
+     56:     for (int j = low; j < high; j++)
+     57:     {
+=>   58:         if (comparator (lines_array[j].begin_ptr, lines_array[j].length, pivot.begin_ptr, pivot.length) <= 0)
+     59: 
+     60:         {
+
+# 2 0x00439EB5 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (37):
+
+     35:     if (low < high)
+     36:     {
+=>   37:         int pi = part_it(lines_array, low, high, comparator);
+     38: 
+     39:         quick_sort(lines_array, low, pi - 1, comparator);
+
+# 3 0x00439EFE in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (41):
+
+     39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+=>   41:         quick_sort(lines_array, pi + 1, high, comparator);
+     42:     }
+     43:     __TRACKEND__
+
+# 4 0x00439EFE in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (41):
+
+     39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+=>   41:         quick_sort(lines_array, pi + 1, high, comparator);
+     42:     }
+     43:     __TRACKEND__
+
+# 5 0x00439EFE in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (41):
+
+     39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+=>   41:         quick_sort(lines_array, pi + 1, high, comparator);
+     42:     }
+     43:     __TRACKEND__
+
+# 6 0x00439EFE in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (41):
+
+     39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+=>   41:         quick_sort(lines_array, pi + 1, high, comparator);
+     42:     }
+     43:     __TRACKEND__
+
+# 7 0x00439EDB in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (39):
+
+     37:         int pi = part_it(lines_array, low, high, comparator);
+     38: 
+=>   39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+     41:         quick_sort(lines_array, pi + 1, high, comparator);
+
+# 8 0x00439EDB in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (39):
+
+     37:         int pi = part_it(lines_array, low, high, comparator);
+     38: 
+=>   39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+     41:         quick_sort(lines_array, pi + 1, high, comparator);
+
+# 9 0x00439EDB in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (39):
+
+     37:         int pi = part_it(lines_array, low, high, comparator);
+     38: 
+=>   39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+     41:         quick_sort(lines_array, pi + 1, high, comparator);
+
+#10 0x00439EDB in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (39):
+
+     37:         int pi = part_it(lines_array, low, high, comparator);
+     38: 
+=>   39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+     41:         quick_sort(lines_array, pi + 1, high, comparator);
+
+#11 0x00439EDB in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (39):
+
+     37:         int pi = part_it(lines_array, low, high, comparator);
+     38: 
+=>   39:         quick_sort(lines_array, low, pi - 1, comparator);
+     40: 
+     41:         quick_sort(lines_array, pi + 1, high, comparator);
+
+#12 0x004385A2 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (43):
+
+     41: 
+     42:         case QUICK_SORT:
+=>   43:             quick_sort  (lines_array, 0, line_amount - 1, reverse_strcmp);
+     44:             break;
+     45: 
+
+#13 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (42):
+
+     40:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     41: 
+=>   42:     start_onegin();
+     43: }
+     44: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 15:17:22, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 15:18:04
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------

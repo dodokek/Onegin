@@ -71,7 +71,7 @@ int part_it(Line lines_array[], int low, int high, ComparatorLink comparator)
     return (i + 1);
 }
 
-   /*Line pivot = lines_array[low + (high - low) / 2];
+   Line pivot = lines_array[low + (high - low) / 2];
    while (true)
    {
       while (list[low] < pivot)
@@ -79,11 +79,12 @@ int part_it(Line lines_array[], int low, int high, ComparatorLink comparator)
       while (list[high] > pivot)
          high--;
 
+
       if (low >= high)
          return high;
 
       swap_lines(&lines_array[low], &lines_array[high]);
-   }     */
+   }
 
 
 
