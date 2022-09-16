@@ -162,17 +162,17 @@ int change_input_name (int argc, const char* argv[], int pos)
 
     __TRACKBEGIN__
 
-    int argument_indx = 0;
+    int skip_args = 0;
 
-    for (int argc_pos = pos + 1; argc_pos < argc; argc_pos++, argument_indx++)
+    for (int arg_indx = pos + 1; arg_indx < argc; arg_indx++, skip_args++)
     {
-        if (argv[argc_pos][0] != '-')
+        if (argv[arg_indx][0] != '-')
         {
-            switch (argument_indx)
+            switch (skip_args)
             {
                 case 0:
-                    puts(argv[argc_pos]);
-                    strcpy(INPUT_NAME, argv[argc_pos]);
+                    puts(argv[arg_indx]);
+                    strcpy(INPUT_NAME, argv[arg_indx]);
                     break;
 
                 default:
@@ -187,7 +187,7 @@ int change_input_name (int argc, const char* argv[], int pos)
 
     __TRACKEND__
 
-    return argument_indx;
+    return skip_args;
 }
 
 
@@ -197,16 +197,16 @@ int change_output_name (int argc, const char* argv[], int pos)
 
     __TRACKBEGIN__
 
-    int argument_indx = 0;
+    int skip_args = 0;
 
-    for (int argc_pos = pos + 1; argc_pos < argc; argc_pos++, argument_indx++)
+    for (int arg_indx = pos + 1; arg_indx < argc; arg_indx++, skip_args++)
     {
-        if (argv[argc_pos][0] != '-')
+        if (argv[arg_indx][0] != '-')
         {
-            switch (argument_indx)
+            switch (skip_args)
             {
                 case 0:
-                    strcpy(OUTPUT_NAME, argv[argc_pos]);
+                    strcpy(OUTPUT_NAME, argv[arg_indx]);
                     break;
 
                 // Here i would add cases for different types of input
@@ -223,7 +223,7 @@ int change_output_name (int argc, const char* argv[], int pos)
 
     __TRACKEND__
 
-    return argument_indx;
+    return skip_args;
 }
 
 
@@ -233,17 +233,17 @@ int choose_sort (int argc, const char* argv[], int pos)
 
     __TRACKBEGIN__
 
-    int argument_indx = 0;
+    int skip_args = 0;
 
-    for (int argc_pos = pos + 1; argc_pos < argc; argc_pos++, argument_indx++)
+    for (int arg_indx = pos + 1; arg_indx < argc; arg_indx++, skip_args++)
     {
-        if (argv[argc_pos][0] != '-')
+        if (argv[arg_indx][0] != '-')
         {
-            switch (argument_indx)
+            switch (skip_args)
             {
                 case 0:
-                    if (strcmp ("2", argv[argc_pos])) SORT_MODE = BUBBLE_SORT;
-                    if (strcmp ("1", argv[argc_pos])) SORT_MODE = QUICK_SORT;
+                    if (strcmp ("2", argv[arg_indx])) SORT_MODE = BUBBLE_SORT;
+                    if (strcmp ("1", argv[arg_indx])) SORT_MODE = QUICK_SORT;
                     break;
 
                 default:
@@ -258,7 +258,7 @@ int choose_sort (int argc, const char* argv[], int pos)
 
     __TRACKEND__
 
-    return argument_indx;
+    return skip_args;
 }
 
 

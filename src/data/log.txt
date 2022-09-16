@@ -1,25 +1,25 @@
 Started logging...
-                  log.cpp:014 | change_input_name >>>
-                  log.cpp:024 | change_input_name <<<
-                  log.cpp:014 | change_output_name >>>
-                  log.cpp:024 | change_output_name <<<
-                  log.cpp:014 | choose_sort >>>
-                  log.cpp:024 | choose_sort <<<
-                  log.cpp:014 | calloc_lines_array >>>
-                  log.cpp:024 | calloc_lines_array <<<
-                  log.cpp:014 | quick_sort >>>
-                  log.cpp:014 |    part_it >>>
-                  log.cpp:024 |    part_it <<<
-                  log.cpp:014 |    quick_sort >>>
-                  log.cpp:024 |    quick_sort <<<
-                  log.cpp:014 |    quick_sort >>>
-                  log.cpp:014 |        part_it >>>
-                  log.cpp:024 |        part_it <<<
-                  log.cpp:014 |        quick_sort >>>
-                  log.cpp:024 |        quick_sort <<<
-                  log.cpp:014 |        quick_sort >>>
-                  log.cpp:024 |        quick_sort <<<
-                  log.cpp:024 |    quick_sort <<<
-                  log.cpp:024 | quick_sort <<<
+                  log.cpp:015 | change_input_name >>>
+                  log.cpp:025 | change_input_name <<<
+                  log.cpp:015 | change_output_name >>>
+                  log.cpp:025 | change_output_name <<<
+                  log.cpp:015 | choose_sort >>>
+                  log.cpp:025 | choose_sort <<<
+                  log.cpp:015 | calloc_lines_array >>>
+                  log.cpp:025 | calloc_lines_array <<<
+                  log.cpp:015 | quick_sort >>>
+                  log.cpp:015 |    part_it >>>
+                  log.cpp:025 |    part_it <<<
+                  log.cpp:015 |    quick_sort >>>
+                  log.cpp:025 |    quick_sort <<<
+                  log.cpp:015 |    quick_sort >>>
+                  log.cpp:015 |        part_it >>>
+                  log.cpp:025 |        part_it <<<
+                  log.cpp:015 |        quick_sort >>>
+                  log.cpp:025 |        quick_sort <<<
+                  log.cpp:015 |        quick_sort >>>
+                  log.cpp:025 |        quick_sort <<<
+                  log.cpp:025 |    quick_sort <<<
+                  log.cpp:025 | quick_sort <<<
 Finishing logging... Goodluck in debugging :)
 

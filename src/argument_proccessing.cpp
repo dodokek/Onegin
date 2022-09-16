@@ -1,13 +1,8 @@
 
 #include "include/argument_proccessing.h"
 
-//-----------------------------------------------------------------------------
 
-double INF = 1000000000;
-
-//-----------------------------------------------------------------------------
-
-int print_help(int argc, const char* argv[], int pos)
+int print_help(int /* argc */, const char* /* argv[] */, int /* pos */)
 {
     printf ("Guess you need some help, try to find an answer in our documentation!\n");
 
@@ -22,17 +17,17 @@ int print_help(int argc, const char* argv[], int pos)
 void process_arguments (int                    argc,      const char* argv[],
                         const struct OptionDef Options[], int         options_range)
 {
-    assert (argc > 0 && argv != NULL && Options != NULL && options_range < INF);
+    assert (argc > 0 && argv != NULL && Options != NULL);
 
-    for (int argc_pos = 0; argc_pos < argc; argc_pos++)
+    for (int arg_indx = 0; arg_indx < argc; arg_indx++)
     {
         for (int i = 0; i < options_range; i++)
         {
-            if (strcmp (argv[argc_pos], Options[i].name) == 0)
+            if (strcmp (argv[arg_indx], Options[i].name) == 0)
             {
-                int skip_argv = Options[i].func (argc, argv, argc_pos);
+                int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
 
-                argc_pos += skip_argv;
+                arg_indx += skip_argv;
             }
         }
     }

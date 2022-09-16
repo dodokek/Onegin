@@ -11,6 +11,8 @@
 //! \note  Необходимо перейти в режим логирования через командную строку (-l, /l, --log)
 //! \note  Вывод осуществляется с учетом отступов при записи дерева функций
 
+// LOG_LINE
+
 #define DO(X)           fprintf    (LOG_FILE, "%25s:%03d ", __FILE__, __LINE__);              \
                         fputc      ('|', LOG_FILE);                                           \
                         put_spaces (SPACING*4),                                               \
@@ -18,6 +20,8 @@
 
 //! \brief Вывод множественных аргументов в файл
 //! \note  Вывод осуществляется с учетом пробелов в дереве функций
+
+// LOG_WRITE
 
 #define LOG_ARGV(...)   fprintf    (LOG_FILE, "%25s:%03d ", __FILE__, __LINE__);              \
                         fputc      ('|', LOG_FILE);                                           \
@@ -49,7 +53,7 @@ static FILE* LOG_FILE = nullptr;
 
 static int LOG_LEVEL = 9;
 
-const  char DEFAULT_LOG_NAME[] = "data//log.txt";
+static const char DEFAULT_LOG_NAME[] = "data//log.txt";
 
 static char ACTIVE_LOGFILE_NAME[] = "log.txt";
 

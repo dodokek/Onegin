@@ -22,6 +22,7 @@ void bubble_sort (Line lines_array[], int lines_amount, __COMPARATOR__)
 }
 
 // I don't fucking know how the hell does this algorithm works man.
+// shell_
 void quick_sort(Line lines_array[], int low, int high, __COMPARATOR__)
 {
     __TRACKBEGIN__

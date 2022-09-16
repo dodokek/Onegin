@@ -11,6 +11,7 @@
 
 void add_tree_level (const char* func_name)
 {
+    // const int tab_size =
     fprintf    (LOG_FILE, "%25s:%03d ", __FILE__, __LINE__);
     fputc      ('|', LOG_FILE);
     put_spaces (SPACING++ * 4);
@@ -29,6 +30,10 @@ void substract_tree_level (const char* func_name)
 }
 
 
+//  void
+//  int
+
+
 bool get_log_file (char file_name[])
 {
     atexit (&finish_log);
@@ -38,42 +43,41 @@ bool get_log_file (char file_name[])
         printf ("File name %s\n", file_name);
 
         LOG_FILE = fopen (file_name, "w");
+        // if (LOG_FILE == NULL) { return FILE_OPEN_ERROR; }
 
         strcpy (ACTIVE_LOGFILE_NAME, file_name);
 
         return true;
     }
 
-    else
-    {
-        printf ("File name %s\n", DEFAULT_LOG_NAME);
+    printf ("File name %s\n", DEFAULT_LOG_NAME);
 
-        LOG_FILE = fopen (DEFAULT_LOG_NAME, "w");
+    LOG_FILE = fopen (DEFAULT_LOG_NAME, "w");
 
-        return true;
-    }
+    return true;
 
-    return false;
 }
 
 
 int open_log (int argc, const char* argv[], int pos)
 {
     char file_name[] = "";
-    int argument_indx = 0;
+    int skip_args = 0;
 
-    for (int argc_pos = pos + 1; argc_pos < argc; argc_pos++, argument_indx++)
+    for (int arg_indx = pos + 1; arg_indx < argc; arg_indx++, skip_args++)
     {
-        if (argv[argc_pos][0] != '-')
+        // if () break;
+        //
+        if (argv[arg_indx][0] != '-')
         {
-            switch (argument_indx)
+            switch (skip_args)
             {
                 case 0:
-                    strcpy (file_name, argv[argc_pos]);
+                    strcpy (file_name, argv[arg_indx]);
                     break;
 
                 case 1:
-                    LOG_LEVEL = atoi (argv[argc_pos]);
+                    LOG_LEVEL = atoi (argv[arg_indx]);
                     break;
 
                 default:
@@ -82,6 +86,7 @@ int open_log (int argc, const char* argv[], int pos)
 
             continue;
         }
+
         break;
     }
 
@@ -92,12 +97,14 @@ int open_log (int argc, const char* argv[], int pos)
     if (!LOG_FILE)
     {
         printf ("Failed to open the file %s\n", file_name);
-        return argument_indx;
+
+        return skip_args;
     }
 
     fprintf (LOG_FILE, "Started logging...\n");
 
-    return argument_indx;
+    return skip_args;
+
 }
 
 
@@ -110,9 +117,8 @@ void finish_log()
 }
 
 
+// space_amount
 void put_spaces (int spaces_amount)
 {
     fprintf (LOG_FILE, "%*s", spaces_amount, " ");
-
-    return;
 }

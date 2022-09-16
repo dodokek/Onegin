@@ -5,8 +5,16 @@
 
 // Command line arguments
 
+#define ADD_OPT(option_name, func_name) {option_name, func_name},
+// main_opt.mac
+
+// ADD_OPT("--log", open_log)
+// ADD_OPT("l", open_log)
+//
+
 const OptionDef Options[] =
 {
+    // #include "main_opt.mac"
     {"--log",      open_log},
     {"-l",         open_log},
     {"/l",         open_log},
@@ -21,7 +29,7 @@ const OptionDef Options[] =
 
     {"-sort",      choose_sort},
     {"-s",         choose_sort},
-    {"/s",         choose_sort}
+    {"/s",         choose_sort},
 };
 
 // Command line arguments
