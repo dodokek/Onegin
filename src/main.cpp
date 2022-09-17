@@ -10,7 +10,6 @@
 
 // ADD_OPT("--log", open_log)
 // ADD_OPT("l", open_log)
-//
 
 const OptionDef Options[] =
 {
@@ -29,7 +28,11 @@ const OptionDef Options[] =
 
     {"-sort",      choose_sort},
     {"-s",         choose_sort},
-    {"/s",         choose_sort},
+    {"/s",         choose_sort}/*,
+
+    {"-help",      print_help},
+    {"-h",         print_help},
+    {"/h",         print_help}*/
 };
 
 // Command line arguments

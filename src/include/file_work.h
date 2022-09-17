@@ -14,7 +14,7 @@ const char default_output_name[] = "data//output.txt";
 
 //-----------------------------------------------------------------------------
 
-FILE* get_file  (const char file_name[], const char* mode);
+FILE* get_file  (const char* file_name, const char* mode);
 
 int read_file (FILE *file, char **buffer);
 

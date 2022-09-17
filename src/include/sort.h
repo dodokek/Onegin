@@ -11,6 +11,7 @@
 #include "log.h"
 
 typedef int (*ComparatorLink)(char *str_first, int len_first, char *str_second, int len_second);
+typedef int (*VoidComp)(const void *, const void *);
 
 //-----------------------------------------------------------------------------
 
@@ -22,11 +23,11 @@ struct Line
 
 //-----------------------------------------------------------------------------
 
-void bubble_sort (Line lines_array[], int lines_amount, ComparatorLink comparator);
+void bubble_sort (void *ptr, size_t count, int size, VoidComp comp);
 
-void quick_sort(Line lines_array[], int low, int high, ComparatorLink comparator);
+void quick_sort(Line lines_array[], int low, int high, VoidComp comparator);
 
-int part_it(Line lines_array[], int low, int high, ComparatorLink comparator);
+int part_it(Line lines_array[], int low, int high, VoidComp comparator);
 
 int reverse_strcmp (char *str_first, int len_first, char *str_second, int len_second);
 
@@ -34,7 +35,11 @@ void skip_none_letters (char **str_ptr);
 
 int forward_strcmp(char *str_first, int len_first, char *str_second, int len_second);
 
-void swap_lines(Line *line_1, Line *line_2);
+void swap_elems(void *line_1, void *line_2);
+
+int forward_comparator(const void* ptr1, const void* ptr2);
+
+int reverse_comparator(const void* ptr1, const void* ptr2);
 
 //-----------------------------------------------------------------------------
 

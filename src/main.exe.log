@@ -3308,3 +3308,1621 @@ Run file:	C:\Projects\Onegin\src\main.exe
 Directory:	C:\Projects\Onegin\src
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E48EC в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x3F4C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6F8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (28):
+
+     26:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     27:             {
+=>   28:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     29: 
+     30:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (39):
+
+     37: int main(int argc, const char *argv[])
+     38: {
+=>   39:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     40: 
+     41:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:27:51
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E48EC в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x3F4C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6F8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (28):
+
+     26:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     27:             {
+=>   28:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     29: 
+     30:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (39):
+
+     37: int main(int argc, const char *argv[])
+     38: {
+=>   39:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     40: 
+     41:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:27:51
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E48EC в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x3EA8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6F8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (28):
+
+     26:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     27:             {
+=>   28:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     29: 
+     30:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (39):
+
+     37: int main(int argc, const char *argv[])
+     38: {
+=>   39:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     40: 
+     41:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:27:59
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E48EC в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x3EA8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6F8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (28):
+
+     26:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     27:             {
+=>   28:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     29: 
+     30:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (39):
+
+     37: int main(int argc, const char *argv[])
+     38: {
+=>   39:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     40: 
+     41:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:27:59
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E48EC в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x10E8 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6F8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (28):
+
+     26:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     27:             {
+=>   28:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     29: 
+     30:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (39):
+
+     37: int main(int argc, const char *argv[])
+     38: {
+=>   39:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     40: 
+     41:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:28:14
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E48EC в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x10E8 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6F8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (28):
+
+     26:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     27:             {
+=>   28:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     29: 
+     30:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (39):
+
+     37: int main(int argc, const char *argv[])
+     38: {
+=>   39:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     40: 
+     41:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:28:14
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E48EC в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2ED0 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6F8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (28):
+
+     26:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     27:             {
+=>   28:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     29: 
+     30:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (39):
+
+     37: int main(int argc, const char *argv[])
+     38: {
+=>   39:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     40: 
+     41:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:28:31
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E48EC в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2ED0 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6F8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (28):
+
+     26:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     27:             {
+=>   28:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     29: 
+     30:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (39):
+
+     37: int main(int argc, const char *argv[])
+     38: {
+=>   39:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     40: 
+     41:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:28:31
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E490C в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x3EDC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6B8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (16):
+
+     14:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     15:             {
+=>   16:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     17: 
+     18:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (43):
+
+     41: int main(int argc, const char *argv[])
+     42: {
+=>   43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+     45:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:51:59
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E490C в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x3EDC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6B8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (16):
+
+     14:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     15:             {
+=>   16:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     17: 
+     18:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (43):
+
+     41: int main(int argc, const char *argv[])
+     42: {
+=>   43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+     45:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:51:59
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E490C в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x3D98 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6B8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (16):
+
+     14:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     15:             {
+=>   16:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     17: 
+     18:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (43):
+
+     41: int main(int argc, const char *argv[])
+     42: {
+=>   43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+     45:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:52:11
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E490C в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x3D98 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6B8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (16):
+
+     14:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     15:             {
+=>   16:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     17: 
+     18:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (43):
+
+     41: int main(int argc, const char *argv[])
+     42: {
+=>   43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+     45:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:52:11
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E4903 в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x1088 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6B8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (16):
+
+     14:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     15:             {
+=>   16:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     17: 
+     18:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (43):
+
+     41: int main(int argc, const char *argv[])
+     42: {
+=>   43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+     45:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:57:23
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7632680A в функции strcat(). Попытка записать данные по адресу 0x004E4903 в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x1088 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7632680A in C:\Windows\System32\msvcrt.dll: strcat()
+
+# 1 0x0043A6B8 in C:\Projects\Onegin\src\main.exe: process_arguments() at C:/Projects/Onegin/src/argument_proccessing.cpp (16):
+
+     14:             if (strcmp (argv[arg_indx], Options[i].name) == 0)
+     15:             {
+=>   16:                 int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+     17: 
+     18:                 arg_indx += skip_argv;
+
+# 2 0x0041C3D4 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (43):
+
+     41: int main(int argc, const char *argv[])
+     42: {
+=>   43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+     45:     start_onegin();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 16 2022 23:27:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 16 2022 23:57:23
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x26B4 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует), errno: 22 (Invalid argument). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x004387B6 in C:\Projects\Onegin\src\main.exe: separate_lines() at C:/Projects/Onegin/src/onegin.cpp (100):
+
+     98:     assert (buffer != nullptr);
+     99:     assert (lines_array != NULL);
+=>  100:     assert (symbols_read > 0);
+    101: 
+    102:     int lines_indx = 0, cur_len = 0;
+
+# 5 0x004386A7 in C:\Projects\Onegin\src\main.exe: get_stat_parse_file() at C:/Projects/Onegin/src/onegin.cpp (75):
+
+     73:     calloc_lines_array(buffer, lines_array, symbols_read);
+     74: 
+=>   75:     *line_amount = separate_lines (buffer, *lines_array, symbols_read);
+     76: 
+     77:     trim_left (*lines_array, *line_amount);
+
+# 6 0x0043854E in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (30):
+
+     28:     Line *lines_array = nullptr;
+     29: 
+=>   30:     get_stat_parse_file (buffer, &lines_array, symbols_read, &line_amount, &InputFileStats);
+     31: 
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+
+# 7 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 11:05:57, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 11:06:05
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0xD0C (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует), errno: 22 (Invalid argument). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043879D in C:\Projects\Onegin\src\main.exe: separate_lines() at C:/Projects/Onegin/src/onegin.cpp (94):
+
+     92:     assert (buffer != nullptr);
+     93:     assert (lines_array != NULL);
+=>   94:     assert (symbols_read > 0);
+     95: 
+     96:     int lines_indx = 0, cur_len = 0;
+
+# 5 0x004386AE in C:\Projects\Onegin\src\main.exe: get_stat_parse_file() at C:/Projects/Onegin/src/onegin.cpp (76):
+
+     74:     calloc_lines_array(buffer, lines_array, symbols_read);
+     75: 
+=>   76:     *line_amount = separate_lines (buffer, *lines_array, symbols_read);
+     77: 
+     78:     trim_left (*lines_array, *line_amount);
+
+# 6 0x00438555 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (30):
+
+     28:     Line *lines_array = nullptr;
+     29: 
+=>   30:     get_stat_parse_file (buffer, &lines_array, symbols_read, &line_amount, &InputFileStats, input_file);
+     31: 
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+
+# 7 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 11:16:36, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 11:16:44
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2BA4 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует), errno: 22 (Invalid argument). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043879D in C:\Projects\Onegin\src\main.exe: separate_lines() at C:/Projects/Onegin/src/onegin.cpp (94):
+
+     92:     assert (buffer != nullptr);
+     93:     assert (lines_array != NULL);
+=>   94:     assert (symbols_read > 0);
+     95: 
+     96:     int lines_indx = 0, cur_len = 0;
+
+# 5 0x004386AE in C:\Projects\Onegin\src\main.exe: get_stat_parse_file() at C:/Projects/Onegin/src/onegin.cpp (76):
+
+     74:     calloc_lines_array(buffer, lines_array, symbols_read);
+     75: 
+=>   76:     *line_amount = separate_lines (buffer, *lines_array, symbols_read);
+     77: 
+     78:     trim_left (*lines_array, *line_amount);
+
+# 6 0x00438555 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (30):
+
+     28:     Line *lines_array = nullptr;
+     29: 
+=>   30:     get_stat_parse_file (buffer, &lines_array, symbols_read, &line_amount, &InputFileStats, input_file);
+     31: 
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+
+# 7 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 11:16:36, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 11:16:56
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2DB4 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует), errno: 2 (No such file or directory), _doserrno: 2 (No such file or directory). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x004384E3 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (19):
+
+     17:     FILE *output_file = get_file (OUTPUT_NAME, "w");
+     18: 
+=>   19:     assert(input_file != nullptr && output_file != nullptr);
+     20: 
+     21:     char *buffer = nullptr;
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 11:23:18, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 11:24:34
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A289 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу 0x100110DD в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2DF0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A289 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A15C in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     Line* line_second = (Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x00439EDA in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < count - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E9 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), forward_comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_strcmp, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_strcmp, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:35:37, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 12:36:04
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A289 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу 0x100110DD в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2DF0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A289 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A15C in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     Line* line_second = (Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x00439EDA in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < count - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E9 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), forward_comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_strcmp, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_strcmp, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:35:37, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 12:36:04
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A289 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу 0x1202CC00 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x1AA4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A289 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A15C in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     Line* line_second = (Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x00439EDA in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < count - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E9 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), forward_comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_strcmp, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_strcmp, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:35:37, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 12:39:42
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A289 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу 0x1202CC00 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x1AA4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A289 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A15C in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     Line* line_second = (Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x00439EDA in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < count - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E9 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), forward_comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_strcmp, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_strcmp, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:35:37, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 12:39:42
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A23B в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу 0x1202A100 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2F84 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A23B in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A10E in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     Line* line_second = (Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x00439ED7 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 12:58:10
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A23B в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу 0x1202A100 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2F84 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A23B in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A10E in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     Line* line_second = (Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x00439ED7 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 12:58:10
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A23B в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу 0x1B011DDD в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x15F4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A23B in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A10E in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     Line* line_second = (Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x00439ED7 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 12:58:22
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A23B в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу 0x1B011DDD в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x15F4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A23B in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A10E in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     Line* line_second = (Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x00439ED7 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 12:58:22
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------

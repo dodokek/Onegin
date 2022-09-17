@@ -3,7 +3,7 @@
 
 //-----------------------------------------------------------------------------
 
-FILE* get_file(const char file_name[], const char* mode)
+FILE* get_file(const char* file_name, const char* mode)
 {
     FILE* tmp_file = fopen(file_name, mode);
 
