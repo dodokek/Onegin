@@ -2,14 +2,16 @@
 #ifndef SORT_H
 #define SORT_H
 
+#include <assert.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <assert.h>
+#include <ctype.h>
 
 #include "log.h"
 
-#typdef ComparatorLink int (*comparator)(char *str_first, int len_first, char *str_second, int len_second)
+typedef int (*ComparatorLink)(char *str_first, int len_first, char *str_second, int len_second);
+typedef int (*VoidComp)(const void *, const void *);
 
 //-----------------------------------------------------------------------------
 
@@ -21,22 +23,26 @@ struct Line
 
 //-----------------------------------------------------------------------------
 
-void bubble_sort (Line lines_array[], int lines_amount, __COMPARATOR__);
+void bubble_sort (void *ptr, size_t count, int size, VoidComp comp);
 
-void quick_sort(Line lines_array[], int low, int high, __COMPARATOR__);
+void quick_sort (Line lines_array[], int low, int high, VoidComp comparator);
 
-int part_it(Line lines_array[], int low, int high, __COMPARATOR__);
+int part_it (Line lines_array[], int low, int high, VoidComp comparator);
 
-int reverse_strcmp (char *str_first, int len_first, char *str_second, int len_second);
+int reverse_strcmp(char *str_first, int len_first, char *str_second, int len_second);
 
-void skip_none_letters (char **str_ptr);
+void skip_not_letters(char **str_ptr);
 
 int forward_strcmp(char *str_first, int len_first, char *str_second, int len_second);
 
-void swap_lines(Line *line_1, Line *line_2);
+void swap_elems(void *line_1, void *line_2);
+
+int forward_comparator(const void* ptr1, const void* ptr2);
+
+int reverse_comparator(const void* ptr1, const void* ptr2);
 
 //-----------------------------------------------------------------------------
 
-const char SKIP_SYMBOLS[] = {'.', ',', '!', '?', ';', ':', ' '};
+// static const char SKIP_SYMBOLS[] = {'.', ',', '!', '?', ';', ':', ' '};
 
 #endif

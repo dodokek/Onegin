@@ -4926,3 +4926,2835 @@ Run file:	C:\Projects\Onegin\src\main.exe
 Directory:	C:\Projects\Onegin\src
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A276 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 134. Попытка прочесть данные по адресу 0x1B010EDD в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x600 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A276 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (134):
+
+    132:     for (int i = 0;;i++)
+    133:     {
+=>  134:         if (str_first[i] < str_second[i]) return -1;
+    135: 
+    136:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A149 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (85):
+
+     83:     const Line* line_second = (const Line*) ptr2;
+     84: 
+=>   85:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     86: 
+     87: }
+
+# 2 0x00439EDD in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 printf ("String1 : %s, String2: %s \n", cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:12:49
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A276 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 134. Попытка прочесть данные по адресу 0x1B010EDD в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x600 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A276 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (134):
+
+    132:     for (int i = 0;;i++)
+    133:     {
+=>  134:         if (str_first[i] < str_second[i]) return -1;
+    135: 
+    136:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A149 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (85):
+
+     83:     const Line* line_second = (const Line*) ptr2;
+     84: 
+=>   85:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     86: 
+     87: }
+
+# 2 0x00439EDD in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 printf ("String1 : %s, String2: %s \n", cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:12:49
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A276 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 134. Попытка прочесть данные по адресу 0x1202D600 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0xB20 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A276 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (134):
+
+    132:     for (int i = 0;;i++)
+    133:     {
+=>  134:         if (str_first[i] < str_second[i]) return -1;
+    135: 
+    136:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A149 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (85):
+
+     83:     const Line* line_second = (const Line*) ptr2;
+     84: 
+=>   85:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     86: 
+     87: }
+
+# 2 0x00439EDD in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 printf ("String1 : %s, String2: %s \n", cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:13:06
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A276 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 134. Попытка прочесть данные по адресу 0x1202D600 в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0xB20 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A276 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (134):
+
+    132:     for (int i = 0;;i++)
+    133:     {
+=>  134:         if (str_first[i] < str_second[i]) return -1;
+    135: 
+    136:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A149 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (85):
+
+     83:     const Line* line_second = (const Line*) ptr2;
+     84: 
+=>   85:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     86: 
+     87: }
+
+# 2 0x00439EDD in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 printf ("String1 : %s, String2: %s \n", cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:13:06
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A276 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 134. Попытка прочесть данные по адресу 0x100133DD в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2B4C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A276 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (134):
+
+    132:     for (int i = 0;;i++)
+    133:     {
+=>  134:         if (str_first[i] < str_second[i]) return -1;
+    135: 
+    136:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A149 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (85):
+
+     83:     const Line* line_second = (const Line*) ptr2;
+     84: 
+=>   85:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     86: 
+     87: }
+
+# 2 0x00439EDD in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 printf ("String1 : %s, String2: %s \n", cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:13:12
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A276 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 134. Попытка прочесть данные по адресу 0x100133DD в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2B4C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A276 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (134):
+
+    132:     for (int i = 0;;i++)
+    133:     {
+=>  134:         if (str_first[i] < str_second[i]) return -1;
+    135: 
+    136:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A149 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (85):
+
+     83:     const Line* line_second = (const Line*) ptr2;
+     84: 
+=>   85:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     86: 
+     87: }
+
+# 2 0x00439EDD in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 printf ("String1 : %s, String2: %s \n", cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:13:12
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A246 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 134. Попытка прочесть данные по адресу 0x100111DD в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x1DC0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A246 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (134):
+
+    132:     for (int i = 0;;i++)
+    133:     {
+=>  134:         if (str_first[i] < str_second[i]) return -1;
+    135: 
+    136:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A119 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (85):
+
+     83:     const Line* line_second = (const Line*) ptr2;
+     84: 
+=>   85:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     86: 
+     87: }
+
+# 2 0x00439EE2 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (19):
+
+     17:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     18:         {
+=>   19:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     20:             {
+     21:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:15:14
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A246 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 134. Попытка прочесть данные по адресу 0x100111DD в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x1DC0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A246 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (134):
+
+    132:     for (int i = 0;;i++)
+    133:     {
+=>  134:         if (str_first[i] < str_second[i]) return -1;
+    135: 
+    136:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A119 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (85):
+
+     83:     const Line* line_second = (const Line*) ptr2;
+     84: 
+=>   85:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     86: 
+     87: }
+
+# 2 0x00439EE2 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (19):
+
+     17:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     18:         {
+=>   19:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     20:             {
+     21:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:15:14
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A25C в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 134. Попытка прочесть данные по адресу NULL в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x1DE4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A25C in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (134):
+
+    132:     for (int i = 0;;i++)
+    133:     {
+=>  134:         if (str_first[i] < str_second[i]) return -1;
+    135: 
+    136:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A13A in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (85):
+
+     83:     const Line* line_second = (const Line*) ptr2;
+     84: 
+=>   85:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     86: 
+     87: }
+
+# 2 0x00439EF3 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (19):
+
+     17:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     18:         {
+=>   19:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     20:             {
+     21:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:16:16
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A25C в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 134. Попытка прочесть данные по адресу NULL в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x1DE4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A25C in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (134):
+
+    132:     for (int i = 0;;i++)
+    133:     {
+=>  134:         if (str_first[i] < str_second[i]) return -1;
+    135: 
+    136:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A13A in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (85):
+
+     83:     const Line* line_second = (const Line*) ptr2;
+     84: 
+=>   85:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     86: 
+     87: }
+
+# 2 0x00439EF3 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (19):
+
+     17:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     18:         {
+=>   19:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     20:             {
+     21:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:16:16
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A24F в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу NULL в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2A60 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A24F in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A12D in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x00439EE6 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:21:26
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A24F в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу NULL в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2A60 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A24F in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A12D in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x00439EE6 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + lap * size + 1))
+     19:             {
+     20:                 swap_elems(cur_ptr + lap * size, cur_ptr + lap * size + 1);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 12:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:21:26
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A25A в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу NULL в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x1E90 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A25A in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A12D in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x00439EE6 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     19:             {
+     20:                 swap_elems(cur_ptr + lap * size, cur_ptr + (lap + 1) * size);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 13:32:54, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:33:02
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A25A в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу NULL в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x1E90 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A25A in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A12D in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x00439EE6 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     19:             {
+     20:                 swap_elems(cur_ptr + lap * size, cur_ptr + (lap + 1) * size);
+
+# 3 0x004386E8 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (70):
+
+     68:     {
+     69:         case BUBBLE_SORT:
+=>   70:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     71:             break;
+     72: 
+
+# 4 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 5 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 13:32:54, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:33:02
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A273 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу NULL в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x22C0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A273 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A151 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x0043A0A1 in C:\Projects\Onegin\src\main.exe: part_it() at C:/Projects/Onegin/src/sort.cpp (64):
+
+     62:         do {
+     63:             i++;
+=>   64:         } while (comparator (lines_array + i, &pivot) < 0);
+     65: 
+     66:         do {
+
+# 3 0x00439FDE in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (40):
+
+     38:     if (low < high)
+     39:     {
+=>   40:         int pi = part_it(lines_array, low, high, comparator);
+     41: 
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+
+# 4 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+# 5 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+# 6 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+# 7 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+# 8 0x0043A004 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (42):
+
+     40:         int pi = part_it(lines_array, low, high, comparator);
+     41: 
+=>   42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+     44:         quick_sort(lines_array, pi + 1, high, comparator);
+
+# 9 0x0043A004 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (42):
+
+     40:         int pi = part_it(lines_array, low, high, comparator);
+     41: 
+=>   42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+     44:         quick_sort(lines_array, pi + 1, high, comparator);
+
+#10 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+#11 0x0043871A in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (76):
+
+     74: 
+     75:         case QUICK_SORT:
+=>   76:             quick_sort  (lines_array, 0, line_amount - 1, comparator);
+     77:             //qsort (lines_array, line_amount, sizeof(Line), comparator);
+     78:             break;
+
+#12 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+#13 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 13:45:15, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:45:33
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0043A273 в функции forward_strcmp() в файле C:/Projects/Onegin/src/sort.cpp на строке 133. Попытка прочесть данные по адресу NULL в модуле C:\Projects\Onegin\src\main.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x22C0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0043A273 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (133):
+
+    131:     for (int i = 0;;i++)
+    132:     {
+=>  133:         if (str_first[i] < str_second[i]) return -1;
+    134: 
+    135:         if (str_first[i] > str_second[i]) return 1;
+
+# 1 0x0043A151 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 2 0x0043A0A1 in C:\Projects\Onegin\src\main.exe: part_it() at C:/Projects/Onegin/src/sort.cpp (64):
+
+     62:         do {
+     63:             i++;
+=>   64:         } while (comparator (lines_array + i, &pivot) < 0);
+     65: 
+     66:         do {
+
+# 3 0x00439FDE in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (40):
+
+     38:     if (low < high)
+     39:     {
+=>   40:         int pi = part_it(lines_array, low, high, comparator);
+     41: 
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+
+# 4 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+# 5 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+# 6 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+# 7 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+# 8 0x0043A004 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (42):
+
+     40:         int pi = part_it(lines_array, low, high, comparator);
+     41: 
+=>   42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+     44:         quick_sort(lines_array, pi + 1, high, comparator);
+
+# 9 0x0043A004 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (42):
+
+     40:         int pi = part_it(lines_array, low, high, comparator);
+     41: 
+=>   42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+     44:         quick_sort(lines_array, pi + 1, high, comparator);
+
+#10 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+#11 0x0043871A in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (76):
+
+     74: 
+     75:         case QUICK_SORT:
+=>   76:             quick_sort  (lines_array, 0, line_amount - 1, comparator);
+     77:             //qsort (lines_array, line_amount, sizeof(Line), comparator);
+     78:             break;
+
+#12 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+#13 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 13:45:15, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 13:45:33
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2A0C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A28C in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (130):
+
+    128: int forward_strcmp(char *str_first, int /*len_first*/, char *str_second, int /*len_second*/)
+    129: {
+=>  130:     assert(str_first != NULL && str_second != NULL);
+    131: 
+    132:     for (int i = 0;;i++)
+
+# 5 0x0043A151 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 6 0x0043A0A1 in C:\Projects\Onegin\src\main.exe: part_it() at C:/Projects/Onegin/src/sort.cpp (64):
+
+     62:         do {
+     63:             i++;
+=>   64:         } while (comparator (lines_array + i, &pivot) < 0);
+     65: 
+     66:         do {
+
+# 7 0x00439FDE in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (40):
+
+     38:     if (low < high)
+     39:     {
+=>   40:         int pi = part_it(lines_array, low, high, comparator);
+     41: 
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+
+# 8 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+# 9 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+#10 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+#11 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+#12 0x0043A004 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (42):
+
+     40:         int pi = part_it(lines_array, low, high, comparator);
+     41: 
+=>   42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+     44:         quick_sort(lines_array, pi + 1, high, comparator);
+
+#13 0x0043A004 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (42):
+
+     40:         int pi = part_it(lines_array, low, high, comparator);
+     41: 
+=>   42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+     44:         quick_sort(lines_array, pi + 1, high, comparator);
+
+#14 0x0043A027 in C:\Projects\Onegin\src\main.exe: quick_sort() at C:/Projects/Onegin/src/sort.cpp (44):
+
+     42:         quick_sort(lines_array, low, pi - 1, comparator);
+     43: 
+=>   44:         quick_sort(lines_array, pi + 1, high, comparator);
+     45:     }
+     46: 
+
+#15 0x0043871A in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (76):
+
+     74: 
+     75:         case QUICK_SORT:
+=>   76:             quick_sort  (lines_array, 0, line_amount - 1, comparator);
+     77:             //qsort (lines_array, line_amount, sizeof(Line), comparator);
+     78:             break;
+
+#16 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+#17 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 13:45:15, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:08:44
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x668 (Main), errno: 22 (Invalid argument). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A28C in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (130):
+
+    128: int forward_strcmp(char *str_first, int /*len_first*/, char *str_second, int /*len_second*/)
+    129: {
+=>  130:     assert(str_first != NULL && str_second != NULL);
+    131: 
+    132:     for (int i = 0;;i++)
+
+# 5 0x0043A151 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 6 0x00439EFE in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     19:             {
+     20:                 swap_elems(cur_ptr + lap * size, cur_ptr + (lap + 1) * size);
+
+# 7 0x004386F4 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (72):
+
+     70:     {
+     71:         case BUBBLE_SORT:
+=>   72:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     73:             break;
+     74: 
+
+# 8 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:11:38, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:11:46
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0xFEC (Main), errno: 22 (Invalid argument). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A2D0 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (132):
+
+    130: int forward_strcmp(char *str_first, int /*len_first*/, char *str_second, int /*len_second*/)
+    131: {
+=>  132:     assert(str_first != NULL && str_second != NULL);
+    133: 
+    134:     for (int i = 0;;i++)
+
+# 5 0x0043A16D in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 6 0x00439F1A in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     19:             {
+     20:                 swap_elems (cur_ptr + lap * size, cur_ptr + (lap + 1) * size);
+
+# 7 0x0043870E in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (74):
+
+     72:     {
+     73:         case BUBBLE_SORT:
+=>   74:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     75:             break;
+     76: 
+
+# 8 0x004385A9 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (36):
+
+     34:     write_result_in_file   (lines_array, line_amount, output_file);
+     35: 
+=>   36:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     37: 
+     38:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:22:57, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:23:11
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0xD44 (Main), errno: 22 (Invalid argument). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A2D0 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (132):
+
+    130: int forward_strcmp(char *str_first, int /*len_first*/, char *str_second, int /*len_second*/)
+    131: {
+=>  132:     assert(str_first != NULL && str_second != NULL);
+    133: 
+    134:     for (int i = 0;;i++)
+
+# 5 0x0043A16D in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 6 0x00439F1A in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     19:             {
+     20:                 swap_elems (cur_ptr + lap * size, cur_ptr + (lap + 1) * size);
+
+# 7 0x0043870E in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (74):
+
+     72:     {
+     73:         case BUBBLE_SORT:
+=>   74:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     75:             break;
+     76: 
+
+# 8 0x004385A9 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (36):
+
+     34:     write_result_in_file   (lines_array, line_amount, output_file);
+     35: 
+=>   36:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     37: 
+     38:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:22:57, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:24:00
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x14D8 (Main), errno: 22 (Invalid argument). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A2D0 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (132):
+
+    130: int forward_strcmp(char *str_first, int /*len_first*/, char *str_second, int /*len_second*/)
+    131: {
+=>  132:     assert(str_first != NULL && str_second != NULL);
+    133: 
+    134:     for (int i = 0;;i++)
+
+# 5 0x0043A16D in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 6 0x00439F1A in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     19:             {
+     20:                 swap_elems (cur_ptr + lap * size, cur_ptr + (lap + 1) * size);
+
+# 7 0x0043870E in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (74):
+
+     72:     {
+     73:         case BUBBLE_SORT:
+=>   74:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     75:             break;
+     76: 
+
+# 8 0x004385A9 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (36):
+
+     34:     write_result_in_file   (lines_array, line_amount, output_file);
+     35: 
+=>   36:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     37: 
+     38:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:22:57, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:25:09
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x2EEC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A2D0 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (132):
+
+    130: int forward_strcmp(char *str_first, int /*len_first*/, char *str_second, int /*len_second*/)
+    131: {
+=>  132:     assert(str_first != NULL && str_second != NULL);
+    133: 
+    134:     for (int i = 0;;i++)
+
+# 5 0x0043A16D in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 6 0x00439F1A in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     19:             {
+     20:                 swap_elems (cur_ptr + lap * size, cur_ptr + (lap + 1) * size);
+
+# 7 0x0043870E in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (74):
+
+     72:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     73:             break;
+=>   74: 
+     75:         case QUICK_SORT:
+     76:             quick_sort  (lines_array, 0, line_amount - 1, comparator);
+
+# 8 0x004385A9 in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (36):
+
+     34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+=>   36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+     37: 
+     38:     free   (buffer);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:22:57, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:30:24
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x700 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A2C0 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (134):
+
+    132:     __TRACKBEGIN__
+    133: 
+=>  134:     assert(str_first != NULL && str_second != NULL);
+    135: 
+    136:     for (int i = 0;;i++)
+
+# 5 0x0043A151 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 6 0x00439EFE in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     19:             {
+     20:                 swap_elems (cur_ptr + lap * size, cur_ptr + (lap + 1) * size);
+
+# 7 0x004386F4 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (72):
+
+     70:     {
+     71:         case BUBBLE_SORT:
+=>   72:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     73:             break;
+     74: 
+
+# 8 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:31:18, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:31:26
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0xA60 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A2C0 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (134):
+
+    132:     __TRACKBEGIN__
+    133: 
+=>  134:     assert(str_first != NULL && str_second != NULL);
+    135: 
+    136:     for (int i = 0;;i++)
+
+# 5 0x0043A151 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (84):
+
+     82:     const Line* line_second = (const Line*) ptr2;
+     83: 
+=>   84:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     85: 
+     86: }
+
+# 6 0x00439EFE in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     19:             {
+     20:                 swap_elems (cur_ptr + lap * size, cur_ptr + (lap + 1) * size);
+
+# 7 0x004386F4 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (72):
+
+     70:     {
+     71:         case BUBBLE_SORT:
+=>   72:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     73:             break;
+     74: 
+
+# 8 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:33:04, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:33:12
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x1680 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A2DA in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (136):
+
+    134:     __TRACKBEGIN__
+    135: 
+=>  136:     assert(str_first != NULL && str_second != NULL);
+    137: 
+    138:     for (int i = 0;;i++)
+
+# 5 0x0043A16B in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (86):
+
+     84:     printf("====\nFirst line: %s, Second line: %s\n====\n", line_first, line_second);
+     85: 
+=>   86:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     87: 
+     88: }
+
+# 6 0x00439EFE in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     19:             {
+     20:                 swap_elems (cur_ptr + lap * size, cur_ptr + (lap + 1) * size);
+
+# 7 0x004386F4 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (72):
+
+     70:     {
+     71:         case BUBBLE_SORT:
+=>   72:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     73:             break;
+     74: 
+
+# 8 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:37:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:42:23
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055369C (32-bit), Flags: Cmdre0, Thread: 0x160C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A2E3 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (136):
+
+    134:     __TRACKBEGIN__
+    135: 
+=>  136:     assert(str_first != NULL && str_second != NULL);
+    137: 
+    138:     for (int i = 0;;i++)
+
+# 5 0x0043A174 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (86):
+
+     84:     printf("====\nFirst line: %s, Second line: %s\n====\n", line_first, line_second);
+     85: 
+=>   86:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     87: 
+     88: }
+
+# 6 0x00439F07 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (18):
+
+     16:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     17:         {
+=>   18:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     19:             {
+     20:                 swap_elems (cur_ptr + lap * size, cur_ptr + (lap + 1) * size);
+
+# 7 0x004386F4 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (72):
+
+     70:     {
+     71:         case BUBBLE_SORT:
+=>   72:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     73:             break;
+     74: 
+
+# 8 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:37:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:43:38
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055469C (32-bit), Flags: Cmdre0, Thread: 0x211C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A31B in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (138):
+
+    136:     __TRACKBEGIN__
+    137: 
+=>  138:     assert(str_first != NULL && str_second != NULL);
+    139: 
+    140:     for (int i = 0;;i++)
+
+# 5 0x0043A1AC in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (88):
+
+     86:     printf("====\nFirst line: %s, Second line: %s\n====\n", line_first, line_second);
+     87: 
+=>   88:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     89: 
+     90: }
+
+# 6 0x00439F1C in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (19):
+
+     17:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     18:         {
+=>   19:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     20:             {
+     21:                 printf("Next ptr %p\n", cur_ptr + lap * size);
+
+# 7 0x004386F4 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (72):
+
+     70:     {
+     71:         case BUBBLE_SORT:
+=>   72:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     73:             break;
+     74: 
+
+# 8 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:37:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:46:25
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055469C (32-bit), Flags: Cmdre0, Thread: 0x2D34 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A33B in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (140):
+
+    138:     __TRACKBEGIN__
+    139: 
+=>  140:     assert(str_first != NULL && str_second != NULL);
+    141: 
+    142:     for (int i = 0;;i++)
+
+# 5 0x0043A1CC in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (90):
+
+     88:     printf("====\nFirst line: %s, Second line: %s\n====\n", line_first, line_second);
+     89: 
+=>   90:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     91: 
+     92: }
+
+# 6 0x00439F5F in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (21):
+
+     19:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     20:         {
+=>   21:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     22:             {
+     23: 
+
+# 7 0x004386F4 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (72):
+
+     70:     {
+     71:         case BUBBLE_SORT:
+=>   72:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     73:             break;
+     74: 
+
+# 8 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:37:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:47:56
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055469C (32-bit), Flags: Cmdre0, Thread: 0x898 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A33B in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (140):
+
+    138:     __TRACKBEGIN__
+    139: 
+=>  140:     assert(str_first != NULL && str_second != NULL);
+    141: 
+    142:     for (int i = 0;;i++)
+
+# 5 0x0043A1CC in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (90):
+
+     88:     printf("====\nFirst line: %s, Second line: %s\n====\n", line_first, line_second);
+     89: 
+=>   90:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     91: 
+     92: }
+
+# 6 0x00439F5F in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (21):
+
+     19:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     20:         {
+=>   21:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     22:             {
+     23: 
+
+# 7 0x004386F4 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (72):
+
+     70:     {
+     71:         case BUBBLE_SORT:
+=>   72:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     73:             break;
+     74: 
+
+# 8 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:37:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:49:13
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055469C (32-bit), Flags: Cmdre0, Thread: 0x658 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A33F in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (140):
+
+    138:     __TRACKBEGIN__
+    139: 
+=>  140:     assert(str_first != NULL && str_second != NULL);
+    141: 
+    142:     for (int i = 0;;i++)
+
+# 5 0x0043A1D0 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (90):
+
+     88:     printf("====\nFirst line: %s, Second line: %s\n====\n", line_first, line_second);
+     89: 
+=>   90:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     91: 
+     92: }
+
+# 6 0x00439F63 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (21):
+
+     19:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     20:         {
+=>   21:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     22:             {
+     23: 
+
+# 7 0x004386F4 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (72):
+
+     70:     {
+     71:         case BUBBLE_SORT:
+=>   72:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     73:             break;
+     74: 
+
+# 8 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:37:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:50:47
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055469C (32-bit), Flags: Cmdre0, Thread: 0x15F0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A335 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (140):
+
+    138:     __TRACKBEGIN__
+    139: 
+=>  140:     assert(str_first != NULL && str_second != NULL);
+    141: 
+    142:     for (int i = 0;;i++)
+
+# 5 0x0043A1C6 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (90):
+
+     88:     printf("====\nFirst line: %s, Second line: %s\n====\n", line_first, line_second);
+     89: 
+=>   90:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     91: 
+     92: }
+
+# 6 0x00439F59 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (21):
+
+     19:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     20:         {
+=>   21:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     22:             {
+     23: 
+
+# 7 0x004386F4 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (72):
+
+     70:     {
+     71:         case BUBBLE_SORT:
+=>   72:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     73:             break;
+     74: 
+
+# 8 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:37:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:52:24
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Projects\Onegin\src\main.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0055469C (32-bit), Flags: Cmdre0, Thread: 0x246C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426C8D in C:\Projects\Onegin\src\main.exe: _txOnSignal() at c:/my stuff/codeblocks/codeblocks/mingw/include/txlib.h (10992)
+# 1 0x773071F1 in C:\Windows\System32\msvcrt.dll: raise()
+# 2 0x7730B69B in C:\Windows\System32\msvcrt.dll: abort()
+# 3 0x7730802A in C:\Windows\System32\msvcrt.dll: assert()
+
+# 4 0x0043A335 in C:\Projects\Onegin\src\main.exe: forward_strcmp() at C:/Projects/Onegin/src/sort.cpp (140):
+
+    138:     __TRACKBEGIN__
+    139: 
+=>  140:     assert(str_first != NULL && str_second != NULL);
+    141: 
+    142:     for (int i = 0;;i++)
+
+# 5 0x0043A1C6 in C:\Projects\Onegin\src\main.exe: forward_comparator() at C:/Projects/Onegin/src/sort.cpp (90):
+
+     88:     printf("====\nFirst line: %s, Second line: %s\n====\n", line_first, line_second);
+     89: 
+=>   90:     return forward_strcmp (line_first->begin_ptr, 0, line_second->begin_ptr, 0);
+     91: 
+     92: }
+
+# 6 0x00439F59 in C:\Projects\Onegin\src\main.exe: bubble_sort() at C:/Projects/Onegin/src/sort.cpp (21):
+
+     19:         for (int lap = 0; lap < int(count) - i - 1; lap++)
+     20:         {
+=>   21:             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
+     22:             {
+     23: 
+
+# 7 0x004386F4 in C:\Projects\Onegin\src\main.exe: sort_and_write_in_file() at C:/Projects/Onegin/src/onegin.cpp (72):
+
+     70:     {
+     71:         case BUBBLE_SORT:
+=>   72:             bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+     73:             break;
+     74: 
+
+# 8 0x0043858F in C:\Projects\Onegin\src\main.exe: start_onegin() at C:/Projects/Onegin/src/onegin.cpp (34):
+
+     32:     write_result_in_file   (lines_array, line_amount, output_file);
+     33: 
+=>   34:     sort_and_write_in_file (lines_array, line_amount, forward_comparator, output_file);
+     35: 
+     36:     sort_and_write_in_file (lines_array, line_amount, reverse_comparator, output_file);
+
+# 9 0x0041C3D9 in C:\Projects\Onegin\src\main.exe: main() at C:/Projects/Onegin/src/main.cpp (45):
+
+     43:     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+     44: 
+=>   45:     start_onegin();
+     46: }
+     47: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\my stuff\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 17 2022 14:37:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Sep 17 2022 14:52:41
+
+Run file:	C:\Projects\Onegin\src\main.exe
+Directory:	C:\Projects\Onegin\src
+
+--------------------------------------------------

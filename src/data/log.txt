@@ -1,4 +1,0 @@
-Started logging...
-                  log.cpp:027 | calloc_lines_array >>>
-                  log.cpp:037 | calloc_lines_array <<<
-                  log.cpp:027 | bubble_sort >>>

@@ -3,13 +3,15 @@
 
 //-----------------------------------------------------------------------------
 
-const char *INPUT_NAME   = "data/default_input.txt";
+static const char *INPUT_NAME   = "data/default_input.txt";
 
-const char *OUTPUT_NAME  = "data/default_output.txt";
+static const char *OUTPUT_NAME  = "data/default_output.txt";
 
 int  SORT_MODE     = BUBBLE_SORT;
 
 //-----------------------------------------------------------------------------
+
+// const char* file_name
 
 int start_onegin()
 {
@@ -43,27 +45,41 @@ int start_onegin()
     return 1;
 }
 
+// line_amount
+// FILE*
+// struct stat
+//
 
 void get_stat_parse_file (char *buffer, Line **lines_array, int symbols_read,
                           int *line_amount, struct stat *InputStat, FILE *analysed_file)
 {
-    calloc_lines_array(buffer, lines_array, symbols_read);
+    calloc_lines_array (buffer, lines_array, symbols_read);
 
     *line_amount = separate_lines (buffer, *lines_array, symbols_read);
 
     trim_left (*lines_array, *line_amount);
 
+    //  ??
+    //  ??
+    //  ??
+
     fstat(fileno(analysed_file), InputStat);
 
     puts   ("fstat() returned:");
+    // ??
+    // st_dev
+    // %u
+
     printf ("  Id of device:   %d\n",   (int) InputStat->st_dev);
-    printf ("  Mode:   %d\n",   (int) InputStat->st_mode);
-    printf ("  File size:   %d\n",   (int) InputStat->st_size);
+    printf ("  Mode:   %d\n",           (int) InputStat->st_mode);
+    printf ("  File size:   %d\n\n",      (int) InputStat->st_size);
 }
 
 
 void sort_and_write_in_file(Line lines_array[], int line_amount, VoidComp comparator, FILE* output_file)
 {
+    __TRACKBEGIN__
+
     switch (SORT_MODE)
     {
         case BUBBLE_SORT:
@@ -71,8 +87,8 @@ void sort_and_write_in_file(Line lines_array[], int line_amount, VoidComp compar
             break;
 
         case QUICK_SORT:
-            //quick_sort  (lines_array, 0, line_amount - 1, comparator);
-            qsort (lines_array, line_amount, sizeof(Line), comparator);
+            quick_sort  (lines_array, 0, line_amount - 1, comparator);
+            //qsort (lines_array, line_amount, sizeof(Line), comparator);
             break;
 
         default:
@@ -82,10 +98,15 @@ void sort_and_write_in_file(Line lines_array[], int line_amount, VoidComp compar
     print_lines (lines_array, line_amount);
 
     write_result_in_file (lines_array, line_amount, output_file);
+
+    __TRACKEND__
 }
 
 
-void calloc_lines_array(char *buffer, Line **lines_array, int symbols_read)
+// int count_line(
+//
+
+void calloc_lines_array (char *buffer, Line **lines_array, int symbols_read)
 {
     assert (buffer != nullptr);
 
@@ -95,13 +116,14 @@ void calloc_lines_array(char *buffer, Line **lines_array, int symbols_read)
     char *cur_ptr = buffer;
     char *end_ptr = cur_ptr + symbols_read;
 
-    for (;cur_ptr != end_ptr; cur_ptr++)
+    for (; cur_ptr != end_ptr; cur_ptr++)
     {
         if (*cur_ptr == '\n') line_counter++;
         printf("%c", *cur_ptr);
     }
 
     *lines_array = (Line*) calloc(sizeof(Line), line_counter);
+    // ??
     __TRACKEND__
     return;
 }
@@ -119,19 +141,20 @@ int separate_lines (char *buffer, Line lines_array[], int symbols_read)
 
     char* end_ptr = cur_ptr + symbols_read;
 
-    for (;cur_ptr != end_ptr; cur_ptr++)
+    for (; cur_ptr != end_ptr; cur_ptr++)
     {
         cur_len++;
                                                                                              //01234
         if (*cur_ptr == '\n')                                                                //abcd\ndef\n
         {                                                                                    //\n
-            if (cur_len > 1)                                                                 //abacaba
+            if (cur_len > 1) // ignore \n lines
             {
                 lines_array[lines_indx].begin_ptr = cur_ptr - cur_len + 1;
                 lines_array[lines_indx].length    = cur_len;
                 *cur_ptr = '\0';
                 lines_indx++;
             }
+
             cur_len = 0;
         }
     }
@@ -179,7 +202,7 @@ void write_result_in_file (Line lines_array[], int lines_amount, FILE* output_fi
         fputc ('\n', output_file);
     }
 
-    fputs ("==========================================\n", output_file);
+    fputs ("===============================================================================\n", output_file);
 }
 
 
@@ -243,6 +266,7 @@ int change_output_name (int argc, const char* argv[], int pos)
                     printf ("Too much additional arguments\n");
             }
         }
+
         else
         {
             break;
@@ -279,10 +303,8 @@ int choose_sort (int argc, const char* argv[], int pos)
                     printf ("Too much additional arguments\n");
             }
         }
-        else
-        {
-            break;
-        }
+
+        break;
     }
 
     __TRACKEND__

@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "include/log.h"
-
 //Global/Const-----------------------------------------------------------------
 
 FILE* LOG_FILE = nullptr;
@@ -18,6 +16,8 @@ char ACTIVE_LOGFILE_NAME[] = "log.txt";
 int SPACING = 0;
 
 //Global/Const-----------------------------------------------------------------
+
+#include "include/log.h"
 
 //-----------------------------------------------------------------------------
 

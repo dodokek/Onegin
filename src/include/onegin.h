@@ -37,10 +37,6 @@ int change_output_name (int argc, const char* argv[], int pos);
 
 int choose_sort (int argc, const char* argv[], int pos);
 
-void get_stat_parse_file (char *buffer, Line **lines_array, int symbols_read, int *line_amount, struct stat *InputStat);
-
-int get_stat_parse_file (char *buffer, Line **lines_array, int symbols_read, int *line_amount);
-
 void sort_and_write_in_file(Line lines_array[], int line_amount, VoidComp comparator, FILE* output_file);
 
 void get_stat_parse_file (char *buffer, Line **lines_array, int symbols_read, int *line_amount, struct stat *InputStat, FILE *analysed_file);
