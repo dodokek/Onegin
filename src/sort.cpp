@@ -3,20 +3,25 @@
 
 //-----------------------------------------------------------------------------
 
-void bubble_sort (Line lines_array[], int lines_amount, ComparatorLink comparator)
+void bubble_sort (void *ptr, int counter, int size_, ComparatorLink comparator)
 {
     __TRACKBEGIN__
 
     printf ("Using bubble sort\n");
 
-    for (int i = 0; i < lines_amount; i++)
+    char *arr = (char*) ptr;
+
+
+    for (int i = 0; i < counter; i++)
     {
-        for (int lap = 0; lap < lines_amount - i - 1; lap++)
+        for (int lap = 0; lap < counter - i - 1; lap++)
         {
-            if (comparator (lines_array[lap].begin_ptr,   lines_array[lap].length,
-                            lines_array[lap+1].begin_ptr, lines_array[lap+1].length) > 0)
+            void *elem1 = arr + size_ * lap;
+            void *elem2 = arr + size_ * (lap + 1);
+
+            if (comparator (elem1, elem2) > 0)
             {
-                swap_lines(&lines_array[lap], &lines_array[lap+1]);
+                swap_elems(elem1, elem2);
             }
         }
     }
@@ -29,6 +34,7 @@ void bubble_sort (Line lines_array[], int lines_amount, ComparatorLink comparato
 void quick_sort(Line lines_array[], int low, int high, ComparatorLink comparator)
 {
     __TRACKBEGIN__
+
     assert (lines_array != NULL && low >= 0);
 
     printf ("Ah yes, quicksort\n");
@@ -41,6 +47,7 @@ void quick_sort(Line lines_array[], int low, int high, ComparatorLink comparator
 
         quick_sort(lines_array, pi + 1, high, comparator);
     }
+
     __TRACKEND__
 }
 
@@ -72,9 +79,15 @@ int part_it(Line lines_array[], int low, int high, ComparatorLink comparator)
 }
 
 
-int reverse_strcmp (char *str_first, int len_first, char *str_second, int len_second)
+int reverse_strcmp (const void *ptr1, const void *ptr2)
 {
-    //printf("Strlen %d\n", length_first);
+    Line *Line_first = (Line*) ptr1;
+    Line *Line_second = (Line*) ptr2;
+
+    char *str_first  = Line_first->begin_ptr;
+    char *str_second = Line_second->begin_ptr;
+    int  len_first   = Line_first->length;
+    int  len_second   = Line_second->length;
 
     if (len_first == 0)  return -1;
     if (len_second == 0) return 1;
@@ -94,6 +107,7 @@ int reverse_strcmp (char *str_first, int len_first, char *str_second, int len_se
 
         continue;
     }
+
     return 0;
 }
 
@@ -103,7 +117,7 @@ void skip_none_letters (char **str_ptr)
     {
         if (!isalpha(**str_ptr))
         {
-            printf("Trimming char %c\n", **str_ptr);
+            //printf("Trimming char %c\n", **str_ptr);
             (*str_ptr)--;
             continue;
         }
@@ -112,28 +126,25 @@ void skip_none_letters (char **str_ptr)
 }
 
 
-int forward_strcmp(char *str_first, int len_first, char *str_second, int len_second)
+int forward_strcmp (const void *ptr1, const void *ptr2)
+
 {
+    Line *Line_first  = (Line*) ptr1;
+    Line *Line_second = (Line*) ptr2;
 
-    for (int i = 0;;i++)
-    {
-        if (str_first[i] < str_second[i]) return -1;
-
-        if (str_first[i] > str_second[i]) return 1;
-
-        if (str_first[i] == '\0' && str_second[i] == '\0') break;
-    }
-
-    return 0;
+    return strcmp(Line_first->begin_ptr, Line_second->begin_ptr);
 }
 
 
-void swap_lines(Line *line_1, Line *line_2)
+void swap_elems(void *ptr1, void *ptr2)
 {
-    Line tmp = *line_1;
+    Line *Line1 = (Line*) ptr1;
+    Line *Line2 = (Line*) ptr2;
 
-    *line_1 = *line_2;
+    Line *tmp = Line1;
 
-    *line_2 = tmp;
+    *Line1 = *Line2;
+
+    *Line2 = *tmp;
 }
 

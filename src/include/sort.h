@@ -10,7 +10,6 @@
 
 #include "log.h"
 
-typedef int (*ComparatorLink)(char *str_first, int len_first, char *str_second, int len_second);
 
 //-----------------------------------------------------------------------------
 
@@ -22,22 +21,24 @@ struct Line
 
 //-----------------------------------------------------------------------------
 
-void bubble_sort (Line lines_array[], int lines_amount, ComparatorLink comparator);
-
-void quick_sort(Line lines_array[], int low, int high, ComparatorLink comparator);
-
-int part_it(Line lines_array[], int low, int high, ComparatorLink comparator);
-
-int reverse_strcmp (char *str_first, int len_first, char *str_second, int len_second);
-
-void skip_none_letters (char **str_ptr);
-
-int forward_strcmp(char *str_first, int len_first, char *str_second, int len_second);
-
-void swap_lines(Line *line_1, Line *line_2);
+typedef int (*ComparatorLink)(const void *prt1, const void *ptr2);
 
 //-----------------------------------------------------------------------------
 
-const char SKIP_SYMBOLS[] = {'.', ',', '!', '?', ';', ':', ' '};
+void bubble_sort (void *ptr, int counter, int size_, ComparatorLink comparator);
+
+void quick_sort (Line lines_array[], int low, int high, ComparatorLink comparator);
+
+int part_it (Line lines_array[], int low, int high, ComparatorLink comparator);
+
+int reverse_strcmp (const void *ptr1, const void *ptr2);
+
+void skip_none_letters (char **str_ptr);
+
+int forward_strcmp (const void *ptr1, const void *ptr2);
+
+void swap_elems (void *ptr1, void *ptr2);
+
+//-----------------------------------------------------------------------------
 
 #endif

@@ -3,11 +3,11 @@
 
 //-----------------------------------------------------------------------------
 
-char INPUT_NAME[50]   = "data//input.txt";
+static char INPUT_NAME[50]   = "data//input.txt";
 
-char OUTPUT_NAME[50]  = "data//output.txt";
+static char OUTPUT_NAME[50]  = "data//output.txt";
 
-int  SORT_MODE        = QUICK_SORT;
+static int  SORT_MODE        = QUICK_SORT;
 
 //-----------------------------------------------------------------------------
 
@@ -37,10 +37,6 @@ int start_onegin()
     sort_and_write_in_file (lines_array, line_amount, forward_strcmp, output_file);
 
     sort_and_write_in_file (lines_array, line_amount, reverse_strcmp, output_file);
-
-    print_lines (lines_array, line_amount);
-
-    write_result_in_file (lines_array, line_amount, output_file);
 
     free   (buffer);
     free   (lines_array);
@@ -88,12 +84,12 @@ void sort_and_write_in_file(Line lines_array[], int line_amount, ComparatorLink 
     switch (SORT_MODE)
     {
         case BUBBLE_SORT:
-            bubble_sort (lines_array, line_amount /*, sizeof(Line)*/, comparator);
+            bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
             break;
 
         case QUICK_SORT:
-            quick_sort  (lines_array, 0, line_amount - 1, comparator);
-            //qsort (lines_array, line_amount, sizeof(Line), comparator);
+            //quick_sort  (lines_array, 0, line_amount - 1, comparator);
+            qsort (lines_array, line_amount, sizeof(Line), comparator);
             break;
 
         default:
@@ -116,7 +112,7 @@ void write_result_in_file (Line lines_array[], int lines_amount, FILE* output_fi
         fputc ('\n', output_file);
     }
 
-    fputs ("================================================================================", output_file);
+    fputs ("================================================================================\n", output_file);
 }
 
 

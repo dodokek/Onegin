@@ -13,6 +13,16 @@
 #include "log.h"
 #include "argument_proccessing.h"
 
+enum sorting_modes
+{
+    BUBBLE_SORT = 1,
+    QUICK_SORT  = 2,
+    MERGE_SORT       // Ha-ha, sometimes
+};
+
+//-----------------------------------------------------------------------------
+
+
 int start_onegin();
 
 int separate_lines (char *buffer, Line lines_array[], int symbols_read);
@@ -41,12 +51,9 @@ int count_lines (char *buffer, int symbols_read);
 
 //-----------------------------------------------------------------------------
 
-enum sorting_modes
-{
-    BUBBLE_SORT = 1,
-    QUICK_SORT  = 2,
-    MERGE_SORT       // Ha-ha, sometimes
-};
+
+
+
 
 #endif
 
