@@ -18,28 +18,28 @@ int start_onegin()
 
     assert(input_file != nullptr && output_file != nullptr);
 
-    char *buffer = nullptr;
-    int  symbols_read = 0;
-    int line_amount = 0;               // Amount of lines, excluding "\n" lines.
+    Text MainText = {};
+    MainText.buffer = nullptr;
+    MainText.symbols_amount = 0;
+    MainText.lines_amount = 0;
+    MainText.lines_array = nullptr;
 
-    symbols_read = read_file (input_file, &buffer);
+    MainText.symbols_amount = read_file (input_file, &(MainText.buffer));
 
-    Line *lines_array = nullptr;
+    calloc_lines_array(MainText.buffer, &(MainText.lines_array), MainText.symbols_amount);
 
-    calloc_lines_array(buffer, &lines_array, symbols_read);
+    MainText.lines_amount = separate_lines (MainText.buffer, MainText.lines_array, MainText.symbols_amount);
 
-    line_amount = separate_lines (buffer, lines_array, symbols_read);
+    trim_left (MainText.lines_array, MainText.lines_amount);
 
-    trim_left (lines_array, line_amount);
+    write_result_in_file   (MainText.lines_array, MainText.lines_amount, output_file);
 
-    write_result_in_file   (lines_array, line_amount, output_file);
+    sort_and_write_in_file (MainText.lines_array, MainText.lines_amount, forward_strcmp, output_file);
 
-    sort_and_write_in_file (lines_array, line_amount, forward_strcmp, output_file);
+    sort_and_write_in_file (MainText.lines_array, MainText.lines_amount, reverse_strcmp, output_file);
 
-    sort_and_write_in_file (lines_array, line_amount, reverse_strcmp, output_file);
-
-    free   (buffer);
-    free   (lines_array);
+    free   (MainText.buffer);
+    free   (MainText.lines_array);
     fclose (input_file);
     fclose (output_file);
 

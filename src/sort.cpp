@@ -87,7 +87,7 @@ int reverse_strcmp (const void *ptr1, const void *ptr2)
     char *str_first  = Line_first->begin_ptr;
     char *str_second = Line_second->begin_ptr;
     int  len_first   = Line_first->length;
-    int  len_second   = Line_second->length;
+    int  len_second  = Line_second->length;
 
     if (len_first == 0)  return -1;
     if (len_second == 0) return 1;

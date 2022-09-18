@@ -51,7 +51,13 @@ int count_lines (char *buffer, int symbols_read);
 
 //-----------------------------------------------------------------------------
 
-
+struct Text
+{
+    char *buffer;
+    int  symbols_amount;
+    int  lines_amount;
+    Line *lines_array;
+};
 
 
 
