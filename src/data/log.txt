@@ -3,19 +3,49 @@ Started logging...
                   log.cpp:037 | change_input_name <<<
                   log.cpp:027 | calloc_lines_array >>>
                   log.cpp:037 | calloc_lines_array <<<
-                  log.cpp:027 | quick_sort >>>
-                  log.cpp:027 |    part_it >>>
-                  log.cpp:037 |    part_it <<<
+                  log.cpp:027 | sort_and_write_in_file >>>
                   log.cpp:027 |    quick_sort >>>
+                  log.cpp:027 |        part_it >>>
+                  log.cpp:037 |        part_it <<<
+                  log.cpp:027 |        quick_sort >>>
+                  log.cpp:027 |            part_it >>>
+                  log.cpp:037 |            part_it <<<
+                  log.cpp:027 |            quick_sort >>>
+                  log.cpp:027 |                part_it >>>
+                  log.cpp:037 |                part_it <<<
+                  log.cpp:027 |                quick_sort >>>
+                  log.cpp:027 |                    part_it >>>
+                  log.cpp:037 |                    part_it <<<
+                  log.cpp:027 |                    quick_sort >>>
+                  log.cpp:037 |                    quick_sort <<<
+                  log.cpp:027 |                    quick_sort >>>
+                  log.cpp:037 |                    quick_sort <<<
+                  log.cpp:037 |                quick_sort <<<
+                  log.cpp:027 |                quick_sort >>>
+                  log.cpp:037 |                quick_sort <<<
+                  log.cpp:037 |            quick_sort <<<
+                  log.cpp:027 |            quick_sort >>>
+                  log.cpp:037 |            quick_sort <<<
+                  log.cpp:037 |        quick_sort <<<
+                  log.cpp:027 |        quick_sort >>>
+                  log.cpp:037 |        quick_sort <<<
                   log.cpp:037 |    quick_sort <<<
+                  log.cpp:037 | sort_and_write_in_file <<<
+                  log.cpp:027 | sort_and_write_in_file >>>
                   log.cpp:027 |    quick_sort >>>
                   log.cpp:027 |        part_it >>>
                   log.cpp:037 |        part_it <<<
                   log.cpp:027 |        quick_sort >>>
                   log.cpp:037 |        quick_sort <<<
                   log.cpp:027 |        quick_sort >>>
+                  log.cpp:027 |            part_it >>>
+                  log.cpp:037 |            part_it <<<
+                  log.cpp:027 |            quick_sort >>>
+                  log.cpp:037 |            quick_sort <<<
+                  log.cpp:027 |            quick_sort >>>
+                  log.cpp:037 |            quick_sort <<<
                   log.cpp:037 |        quick_sort <<<
                   log.cpp:037 |    quick_sort <<<
-                  log.cpp:037 | quick_sort <<<
+                  log.cpp:037 | sort_and_write_in_file <<<
 Finishing logging... Goodluck in debugging :)
 

@@ -20,6 +20,7 @@ int start_onegin()
 
     char *buffer = nullptr;
     int  symbols_read = 0;
+    int line_amount = 0;               // Amount of lines, excluding "\n" lines.
 
     symbols_read = read_file (input_file, &buffer);
 
@@ -27,23 +28,15 @@ int start_onegin()
 
     calloc_lines_array(buffer, &lines_array, symbols_read);
 
-    int line_amount = separate_lines (buffer, lines_array, symbols_read);
+    line_amount = separate_lines (buffer, lines_array, symbols_read);
 
     trim_left (lines_array, line_amount);
 
-    switch (SORT_MODE)
-    {
-        case BUBBLE_SORT:
-            bubble_sort (lines_array, line_amount, reverse_strcmp);
-            break;
+    write_result_in_file   (lines_array, line_amount, output_file);
 
-        case QUICK_SORT:
-            quick_sort  (lines_array, 0, line_amount - 1, reverse_strcmp);
-            break;
+    sort_and_write_in_file (lines_array, line_amount, forward_strcmp, output_file);
 
-        default:
-            break;
-    }
+    sort_and_write_in_file (lines_array, line_amount, reverse_strcmp, output_file);
 
     print_lines (lines_array, line_amount);
 
@@ -55,6 +48,75 @@ int start_onegin()
     fclose (output_file);
 
     return 1;
+}
+
+
+void calloc_lines_array(char *buffer, Line **lines_array, int symbols_read)
+{
+    assert (buffer != nullptr);
+
+    __TRACKBEGIN__
+
+    *lines_array = (Line*) calloc(sizeof(Line), count_lines (buffer, symbols_read));
+
+    __TRACKEND__
+    return;
+}
+
+
+int count_lines (char *buffer, int symbols_read)
+{
+    char *cur_ptr = buffer;
+    char *end_ptr = cur_ptr + symbols_read;
+
+    int line_counter = 0;
+
+    for (;cur_ptr != end_ptr; cur_ptr++)
+    {
+        if (*cur_ptr == '\n') line_counter++;
+        printf("%c", *cur_ptr);
+    }
+
+    return line_counter;
+}
+
+
+void sort_and_write_in_file(Line lines_array[], int line_amount, ComparatorLink comparator, FILE* output_file)
+{
+    __TRACKBEGIN__
+
+    switch (SORT_MODE)
+    {
+        case BUBBLE_SORT:
+            bubble_sort (lines_array, line_amount /*, sizeof(Line)*/, comparator);
+            break;
+
+        case QUICK_SORT:
+            quick_sort  (lines_array, 0, line_amount - 1, comparator);
+            //qsort (lines_array, line_amount, sizeof(Line), comparator);
+            break;
+
+        default:
+            break;
+    }
+
+    print_lines (lines_array, line_amount);
+
+    write_result_in_file (lines_array, line_amount, output_file);
+
+    __TRACKEND__
+}
+
+
+void write_result_in_file (Line lines_array[], int lines_amount, FILE* output_file)
+{
+    for (int i = 0; i < lines_amount; i++)
+    {
+        fputs (lines_array[i].begin_ptr, output_file);
+        fputc ('\n', output_file);
+    }
+
+    fputs ("================================================================================", output_file);
 }
 
 
@@ -122,36 +184,6 @@ void trim_left (Line lines_array[], int lines_amount)
 
 
 
-void write_result_in_file (Line lines_array[], int lines_amount, FILE* output_file)
-{
-    for (int i = 0; i < lines_amount; i++)
-    {
-        fputs (lines_array[i].begin_ptr, output_file);
-        fputc ('\n', output_file);
-    }
-}
-
-
-void calloc_lines_array(char *buffer, Line **lines_array, int symbols_read)
-{
-    assert (buffer != nullptr);
-
-    __TRACKBEGIN__
-    int line_counter = 0;
-
-    char *cur_ptr = buffer;
-    char *end_ptr = cur_ptr + symbols_read;
-
-    for (;cur_ptr != end_ptr; cur_ptr++)
-    {
-        if (*cur_ptr == '\n') line_counter++;
-        printf("%c", *cur_ptr);
-    }
-
-    *lines_array = (Line*) calloc(sizeof(Line), line_counter);
-    __TRACKEND__
-    return;
-}
 
 
 int change_input_name (int argc, const char* argv[], int pos)

@@ -8,6 +8,7 @@ void bubble_sort (Line lines_array[], int lines_amount, ComparatorLink comparato
     __TRACKBEGIN__
 
     printf ("Using bubble sort\n");
+
     for (int i = 0; i < lines_amount; i++)
     {
         for (int lap = 0; lap < lines_amount - i - 1; lap++)
@@ -47,28 +48,27 @@ void quick_sort(Line lines_array[], int low, int high, ComparatorLink comparator
 int part_it(Line lines_array[], int low, int high, ComparatorLink comparator)
 {
     __TRACKBEGIN__
-    assert (lines_array != NULL && low >= 0);
-
-    Line pivot = lines_array[high];
-
-    int i = (low - 1);
-
-    for (int j = low; j < high; j++)
-    {
-        if (comparator (lines_array[j].begin_ptr, lines_array[j].length, pivot.begin_ptr, pivot.length) <= 0)
-
-        {
-            i++;
-
-            swap_lines(&lines_array[i], &lines_array[j]);
-        }
-    }
-
-    swap_lines(&lines_array[i+1], &lines_array[high]);
-
     __TRACKEND__
 
-    return (i + 1);
+    Line pivot = lines_array[low];
+    int i = low - 1;
+    int j = high + 1;
+
+    while (true)
+    {
+        do {
+            i++;
+        } while (comparator (lines_array + i, &pivot) < 0);
+
+        do {
+            j--;
+        } while (comparator (lines_array + j, &pivot) > 0);
+
+        if (i >= j)
+            return j;
+
+        swap_elems(&lines_array[i], &lines_array[j]);
+    }
 }
 
 

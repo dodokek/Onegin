@@ -35,6 +35,10 @@ int change_output_name (int argc, const char* argv[], int pos);
 
 int choose_sort (int argc, const char* argv[], int pos);
 
+void sort_and_write_in_file(Line lines_array[], int line_amount, ComparatorLink comparator, FILE* output_file);
+
+int count_lines (char *buffer, int symbols_read);
+
 //-----------------------------------------------------------------------------
 
 enum sorting_modes
