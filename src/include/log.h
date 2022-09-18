@@ -84,33 +84,4 @@ void substract_tree_level (const char* func_name);
 
 //-----------------------------------------------------------------------------
 
-/*class MakeSpace
-{
-
-public:
-    MakeSpace (const char* str)
-    {
-        fprintf (LOG_FILE, "%25s:%03d ", __FILE__, __LINE__);
-        fputc('|', LOG_FILE);
-        put_spaces(SPACING++ * 4);
-
-        LOG_FUNC("%s\n", str);
-
-        this->func_name = str;
-    }
-
-   ~MakeSpace ()
-   {
-        fprintf (LOG_FILE, "%25s:%03d ", __FILE__, __LINE__);
-        fputc('|', LOG_FILE);
-        put_spaces(--SPACING * 4);
-
-        LOG_FUNC("%s\n", this->func_name);
-   }
-
-private:
-    const char* func_name;
-
-};*/
-
 #endif

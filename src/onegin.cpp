@@ -18,8 +18,6 @@ int start_onegin()
 
     assert(input_file != nullptr && output_file != nullptr);
 
-    //return FILE_OPEN_ERROR;
-
     char *buffer = nullptr;
     int  symbols_read = 0;
 

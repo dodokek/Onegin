@@ -71,21 +71,6 @@ int part_it(Line lines_array[], int low, int high, ComparatorLink comparator)
     return (i + 1);
 }
 
-   /*Line pivot = lines_array[low + (high - low) / 2];
-   while (true)
-   {
-      while (list[low] < pivot)
-         low++;
-      while (list[high] > pivot)
-         high--;
-
-      if (low >= high)
-         return high;
-
-      swap_lines(&lines_array[low], &lines_array[high]);
-   }     */
-
-
 
 int reverse_strcmp (char *str_first, int len_first, char *str_second, int len_second)
 {
