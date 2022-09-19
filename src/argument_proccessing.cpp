@@ -1,28 +1,11 @@
 
 #include "include/argument_proccessing.h"
 
-enum sorting_modes
-{
-    BUBBLE_SORT = 1,
-    QUICK_SORT  = 2,
-    MERGE_SORT
-};
-
-//-----------------------------------------------------------------------------
-
-static char INPUT_NAME[50]   = "data//input.txt";
-
-static char OUTPUT_NAME[50]  = "data//output.txt";
-
-static int  SORT_MODE        = BUBBLE_SORT;
-
-//-----------------------------------------------------------------------------
-
 
 void process_arguments (int                    argc,      const char* argv[],
-                        const struct OptionDef Options[], int         options_range)
+                        const struct OptionDef Options[], int         options_range,
+                        GeneralVariables       *GeneralV)
 {
-
     assert (argc > 0 && argv != NULL && Options != NULL);
 
     for (int arg_indx = 0; arg_indx < argc; arg_indx++)
@@ -31,7 +14,7 @@ void process_arguments (int                    argc,      const char* argv[],
         {
             if (strcmp (argv[arg_indx], Options[i].name) == 0)
             {
-                int skip_argv = Options[i].opt_handle (argc, argv, arg_indx);
+                int skip_argv = Options[i].opt_handle (argc, argv, arg_indx, GeneralV);
 
                 arg_indx += skip_argv;
             }
@@ -40,7 +23,7 @@ void process_arguments (int                    argc,      const char* argv[],
 }
 
 
-int print_help(int /* argc */, const char* /* argv[] */, int /* pos */)
+int print_help(int /* argc */, const char* /* argv[] */, int /* pos */, void* /*GeneralV*/)
 {
     printf ("Guess you need some help, try to find an answer in our documentation!\n");
 
@@ -52,9 +35,11 @@ int print_help(int /* argc */, const char* /* argv[] */, int /* pos */)
 }
 
 
-int change_input_name (int argc, const char* argv[], int pos)
+int change_input_name (int argc, const char* argv[], int pos, void* VariableStruct)
 {
     assert(argc > 0 && argv != NULL && pos >= 0);
+
+    GeneralVariables *CurGeneralV = (GeneralVariables*) VariableStruct;
 
     __TRACKBEGIN__
 
@@ -63,12 +48,12 @@ int change_input_name (int argc, const char* argv[], int pos)
     for (int arg_indx = pos + 1; arg_indx < argc; arg_indx++, skip_args++)
     {
         if (argv[arg_indx][0] != '-')
-        {
+        {   
             switch (skip_args)
             {
                 case 0:
                     puts(argv[arg_indx]);
-                    strcpy(INPUT_NAME, argv[arg_indx]);
+                    CurGeneralV->input_file_name = (char*) argv[arg_indx];
                     break;
 
                 default:
@@ -87,11 +72,13 @@ int change_input_name (int argc, const char* argv[], int pos)
 }
 
 
-int change_output_name (int argc, const char* argv[], int pos)
+int change_output_name (int argc, const char* argv[], int pos, void* VariableStruct)
 {
     assert(argc > 0 && argv != NULL && pos >= 0);
 
     __TRACKBEGIN__
+
+    GeneralVariables *CurGeneralV = (GeneralVariables*) VariableStruct;
 
     int skip_args = 0;
 
@@ -102,7 +89,8 @@ int change_output_name (int argc, const char* argv[], int pos)
             switch (skip_args)
             {
                 case 0:
-                    strcpy(OUTPUT_NAME, argv[arg_indx]);
+                    puts(argv[arg_indx]);
+                    CurGeneralV->output_file_name = (char*) argv[arg_indx];
                     break;
 
                 // Here i would add cases for different types of input
@@ -124,9 +112,11 @@ int change_output_name (int argc, const char* argv[], int pos)
 }
 
 
-int choose_sort (int argc, const char* argv[], int pos)
+int choose_sort (int argc, const char* argv[], int pos, void* VariableStruct)
 {
     assert(argc > 0 && argv != NULL && pos >= 0);
+
+    GeneralVariables *CurGeneralV = (GeneralVariables*) VariableStruct;
 
     __TRACKBEGIN__
 
@@ -139,8 +129,8 @@ int choose_sort (int argc, const char* argv[], int pos)
             switch (skip_args)
             {
                 case 0:
-                    if (strcmp ("2", argv[arg_indx])) SORT_MODE = BUBBLE_SORT;
-                    if (strcmp ("1", argv[arg_indx])) SORT_MODE = QUICK_SORT;
+                    if (strcmp ("2", argv[arg_indx])) CurGeneralV->sort_mode = BUBBLE_SORT;
+                    if (strcmp ("1", argv[arg_indx])) CurGeneralV->sort_mode = QUICK_SORT;
                     break;
 
                 default:

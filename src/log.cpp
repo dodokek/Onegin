@@ -71,7 +71,7 @@ bool get_log_file (char file_name[])
 }
 
 
-int open_log (int argc, const char* argv[], int pos)
+int open_log (int argc, const char* argv[], int pos, void* VariableStruct)
 {
     char file_name[] = "";
     int skip_args = 0;

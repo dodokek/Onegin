@@ -24,7 +24,7 @@ struct Text
 };
 
 
-int start_onegin();
+int start_onegin (GeneralVariables *MainVariables);
 
 int separate_lines (Text *MainText);
 
@@ -40,13 +40,7 @@ void write_result_in_file (Text *MainText, FILE* output_file);
 
 void calloc_lines_array (Text *MainText);
 
-int change_input_name (int argc, const char* argv[], int pos);
-
-int change_output_name (int argc, const char* argv[], int pos);
-
-int choose_sort (int argc, const char* argv[], int pos);
-
-void sort_and_write_in_file (Text *MainText, ComparatorPtr comparator, FILE* output_file);
+void sort_and_write_in_file (Text *MainText, ComparatorPtr comparator, FILE* output_file, int sort_mode);
 
 int count_lines (char *buffer, int symbols_read);
 

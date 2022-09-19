@@ -18,7 +18,25 @@ struct OptionDef
 {
     const char* name;
 
-    int (*opt_handle)(int argc, const char* argv[], int arg_indx);
+    int (*opt_handle)(int argc, const char* argv[], int arg_indx, void *VariableStruct);
+};
+
+
+struct GeneralVariables
+{
+    char *input_file_name;
+    
+    char *output_file_name;
+
+    int sort_mode; 
+};
+
+
+enum sorting_modes
+{
+    BUBBLE_SORT = 1,
+    QUICK_SORT  = 2,
+    MERGE_SORT
 };
 
 
@@ -31,19 +49,20 @@ struct OptionDef
 /// \warning ??????? ?? ????? ?????????? ????? ?????? ???????? ?????? ???????.
 
 void process_arguments (int                    argc,      const char* argv[],
-                       const struct OptionDef  Options[], int         options_range);
+                       const struct OptionDef  Options[], int         options_range,
+                       GeneralVariables       *GeneralV);
 
 /// \brief ??????? ??? ????????? ????????? ????????? ?????? -h, /h, --help
 /// \arg     argc - ?????????? ?????????? ????????? ?????? ??? ??????? .exe ?????
 /// \arg     argv - ?????? ???????? ??????????
 
-int print_help(int argc, const char* argv[], int pos);
+int print_help(int argc, const char* argv[], int pos, void* VariableStruct);
 
-int change_input_name (int argc, const char* argv[], int pos);
+int change_input_name (int argc, const char* argv[], int pos, void* VariableStruct);
 
-int change_output_name (int argc, const char* argv[], int pos);
+int change_output_name (int argc, const char* argv[], int pos, void* VariableStruct);
 
-int choose_sort (int argc, const char* argv[], int pos);
+int choose_sort (int argc, const char* argv[], int pos, void* VariableStruct);
 
 //-----------------------------------------------------------------------------
 

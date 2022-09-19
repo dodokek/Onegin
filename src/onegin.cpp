@@ -2,10 +2,10 @@
 #include "include/onegin.h"
 
 
-int start_onegin()
+int start_onegin(GeneralVariables *MainVariables)
 {
-    FILE *input_file  = get_file (INPUT_NAME, "r");
-    FILE *output_file = get_file (OUTPUT_NAME, "w");
+    FILE *input_file  = get_file (MainVariables->input_file_name, "r");
+    FILE *output_file = get_file (MainVariables->output_file_name, "w");
 
     assert(input_file != nullptr && output_file != nullptr);
 
@@ -21,9 +21,9 @@ int start_onegin()
 
     write_result_in_file   (&MainText, output_file);
 
-    sort_and_write_in_file (&MainText, forward_strcmp, output_file);
+    sort_and_write_in_file (&MainText, forward_strcmp, output_file, MainVariables->sort_mode);
 
-    sort_and_write_in_file (&MainText, reverse_strcmp, output_file);
+    sort_and_write_in_file (&MainText, reverse_strcmp, output_file, MainVariables->sort_mode);
 
     MainTextDestr (&MainText);
 
@@ -65,11 +65,11 @@ int count_lines (char *buffer, int symbols_read)
 }
 
 
-void sort_and_write_in_file (Text *MainText, ComparatorPtr comparator, FILE* output_file)
+void sort_and_write_in_file (Text *MainText, ComparatorPtr comparator, FILE* output_file, int sort_mode)
 {
     __TRACKBEGIN__
 
-    switch (SORT_MODE)
+    switch (sort_mode)
     {
         case BUBBLE_SORT:
             bubble_sort (MainText->lines_array, MainText->lines_amount, sizeof(Line), comparator);
