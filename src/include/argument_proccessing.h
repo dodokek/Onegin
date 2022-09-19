@@ -24,9 +24,9 @@ struct OptionDef
 
 struct GeneralVariables
 {
-    char *input_file_name;
+    const char *input_file_name;
     
-    char *output_file_name;
+    const char *output_file_name;
 
     int sort_mode; 
 };

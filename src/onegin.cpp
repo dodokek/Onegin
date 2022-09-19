@@ -44,7 +44,43 @@ void calloc_lines_array (Text *MainText)
     MainText->lines_array = (Line*) calloc (sizeof(Line), count_lines (MainText->buffer, MainText->symbols_amount));
 
     __TRACKEND__
+
     return;
+}
+
+
+int separate_lines (Text *MainText)
+
+{
+    assert (MainText->buffer != nullptr && MainText->lines_array != NULL && MainText->symbols_amount > 0);
+
+    int lines_indx = 0, cur_len = 0;
+
+    char *cur_ptr = MainText->buffer;
+
+    char *end_ptr = cur_ptr + MainText->symbols_amount;
+
+    for (; cur_ptr != end_ptr; cur_ptr++)
+    {
+        cur_len++;
+                                                                                             //01234
+        if (*cur_ptr == '\n')                                                                //abcd\ndef\n
+        {                                                                                    //\n
+            if (cur_len > 1) // ignore "\n"
+            {
+                MainText->lines_array[lines_indx].begin_ptr = cur_ptr - cur_len + 1;
+                MainText->lines_array[lines_indx].length    = cur_len;
+                *cur_ptr = '\0';
+                lines_indx++;
+            }
+
+            cur_len = 0;
+        }
+    }
+
+    MainText->lines_amount = lines_indx;
+
+    return 1;
 }
 
 
@@ -76,8 +112,8 @@ void sort_and_write_in_file (Text *MainText, ComparatorPtr comparator, FILE* out
             break;
 
         case QUICK_SORT:
-            //quick_sort  (lines_array, 0, line_amount - 1, comparator);
-            qsort (MainText->lines_array, MainText->lines_amount, sizeof(Line), comparator);
+            quick_sort  (MainText->lines_array, 0, MainText->lines_amount - 1, comparator);
+            //qsort (MainText->lines_array, MainText->lines_amount, sizeof(Line), comparator);
             break;
 
         default:
@@ -101,43 +137,6 @@ void write_result_in_file (Text *MainText, FILE* output_file)
     }
 
     fputs ("================================================================================\n", output_file);
-}
-
-
-int separate_lines (Text *MainText)
-
-{
-    assert (MainText->buffer != nullptr);
-    assert (MainText->lines_array != NULL);
-    assert (MainText->symbols_amount > 0);
-
-    int lines_indx = 0, cur_len = 0;
-
-    char *cur_ptr = MainText->buffer;
-
-    char *end_ptr = cur_ptr + MainText->symbols_amount;
-
-    for (; cur_ptr != end_ptr; cur_ptr++)
-    {
-        cur_len++;
-                                                                                             //01234
-        if (*cur_ptr == '\n')                                                                //abcd\ndef\n
-        {                                                                                    //\n
-            if (cur_len > 1) // ignore "\n"
-            {
-                MainText->lines_array[lines_indx].begin_ptr = cur_ptr - cur_len + 1;
-                MainText->lines_array[lines_indx].length    = cur_len;
-                *cur_ptr = '\0';
-                lines_indx++;
-            }
-
-            cur_len = 0;
-        }
-    }
-
-    MainText->lines_amount = lines_indx;
-
-    return 1;
 }
 
 

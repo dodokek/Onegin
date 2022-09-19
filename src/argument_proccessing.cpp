@@ -93,8 +93,6 @@ int change_output_name (int argc, const char* argv[], int pos, void* VariableStr
                     CurGeneralV->output_file_name = (char*) argv[arg_indx];
                     break;
 
-                // Here i would add cases for different types of input
-
                 default:
                     printf ("Too much additional arguments\n");
             }

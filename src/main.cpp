@@ -32,7 +32,7 @@ const OptionDef Options[] =
 
 int main(int argc, const char *argv[])
 {
-    GeneralVariables MainVariables = {"data//input.txt", "data//output.txt", BUBBLE_SORT};
+    GeneralVariables MainVariables = {"data/hamlet.txt", "data/default_output.txt", BUBBLE_SORT};
 
     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]), &MainVariables);
 
