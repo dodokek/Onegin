@@ -1,15 +1,6 @@
 
 #include "include/onegin.h"
 
-//-----------------------------------------------------------------------------
-
-static char INPUT_NAME[50]   = "data//input.txt";
-
-static char OUTPUT_NAME[50]  = "data//output.txt";
-
-static int  SORT_MODE        = BUBBLE_SORT;
-
-//-----------------------------------------------------------------------------
 
 int start_onegin()
 {
@@ -185,112 +176,6 @@ void MainTextDestr (Text *self)
     free (self->lines_array);
 }
 
-
-int change_input_name (int argc, const char* argv[], int pos)
-{
-    assert(argc > 0 && argv != NULL && pos >= 0);
-
-    __TRACKBEGIN__
-
-    int skip_args = 0;
-
-    for (int arg_indx = pos + 1; arg_indx < argc; arg_indx++, skip_args++)
-    {
-        if (argv[arg_indx][0] != '-')
-        {
-            switch (skip_args)
-            {
-                case 0:
-                    puts(argv[arg_indx]);
-                    strcpy(INPUT_NAME, argv[arg_indx]);
-                    break;
-
-                default:
-                    printf ("Too much additional arguments\n");
-            }
-        }
-        else
-        {
-            break;
-        }
-    }
-
-    __TRACKEND__
-
-    return skip_args;
-}
-
-
-int change_output_name (int argc, const char* argv[], int pos)
-{
-    assert(argc > 0 && argv != NULL && pos >= 0);
-
-    __TRACKBEGIN__
-
-    int skip_args = 0;
-
-    for (int arg_indx = pos + 1; arg_indx < argc; arg_indx++, skip_args++)
-    {
-        if (argv[arg_indx][0] != '-')
-        {
-            switch (skip_args)
-            {
-                case 0:
-                    strcpy(OUTPUT_NAME, argv[arg_indx]);
-                    break;
-
-                // Here i would add cases for different types of input
-
-                default:
-                    printf ("Too much additional arguments\n");
-            }
-        }
-
-        else
-        {
-            break;
-        }
-    }
-
-    __TRACKEND__
-
-    return skip_args;
-}
-
-
-int choose_sort (int argc, const char* argv[], int pos)
-{
-    assert(argc > 0 && argv != NULL && pos >= 0);
-
-    __TRACKBEGIN__
-
-    int skip_args = 0;
-
-    for (int arg_indx = pos + 1; arg_indx < argc; arg_indx++, skip_args++)
-    {
-        if (argv[arg_indx][0] != '-')
-        {
-            switch (skip_args)
-            {
-                case 0:
-                    if (strcmp ("2", argv[arg_indx])) SORT_MODE = BUBBLE_SORT;
-                    if (strcmp ("1", argv[arg_indx])) SORT_MODE = QUICK_SORT;
-                    break;
-
-                default:
-                    printf ("Too much additional arguments\n");
-            }
-        }
-        else
-        {
-            break;
-        }
-    }
-
-    __TRACKEND__
-
-    return skip_args;
-}
 
 
 

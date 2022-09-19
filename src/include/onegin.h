@@ -13,16 +13,7 @@
 #include "log.h"
 #include "argument_proccessing.h"
 
-enum sorting_modes
-{
-    BUBBLE_SORT = 1,
-    QUICK_SORT  = 2,
-    MERGE_SORT
-};
-
 //-----------------------------------------------------------------------------
-
-
 
 struct Text
 {
