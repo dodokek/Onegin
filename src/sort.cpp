@@ -3,7 +3,7 @@
 
 //-----------------------------------------------------------------------------
 
-void bubble_sort (void *ptr, int counter, int size_, ComparatorPtr comparator)
+void bubble_sort (void *ptr, int counter, int size_, ComparatorPtr comparator) 
 {
     __TRACKBEGIN__
 
