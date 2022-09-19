@@ -16,9 +16,6 @@ struct OptionDef
 {
     const char* name;
 
-    // opt_handle
-
-
     int (*opt_handle)(int argc, const char* argv[], int arg_indx);
 };
 

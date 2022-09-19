@@ -1,6 +1,6 @@
 
 #include "include/argument_proccessing.h"
-  
+
 
 int print_help(int /* argc */, const char* /* argv[] */, int /* pos */)
 {
@@ -17,6 +17,7 @@ int print_help(int /* argc */, const char* /* argv[] */, int /* pos */)
 void process_arguments (int                    argc,      const char* argv[],
                         const struct OptionDef Options[], int         options_range)
 {
+
     assert (argc > 0 && argv != NULL && Options != NULL);
 
     for (int arg_indx = 0; arg_indx < argc; arg_indx++)

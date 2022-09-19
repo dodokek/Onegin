@@ -21,15 +21,15 @@ struct Line
 
 //-----------------------------------------------------------------------------
 
-typedef int (*ComparatorLink)(const void *prt1, const void *ptr2);
+typedef int (*ComparatorPtr)(const void *prt1, const void *ptr2);
 
 //-----------------------------------------------------------------------------
 
-void bubble_sort (void *ptr, int counter, int size_, ComparatorLink comparator);
+void bubble_sort (void *ptr, int counter, int size_, ComparatorPtr comparator);
 
-void quick_sort (Line lines_array[], int low, int high, ComparatorLink comparator);
+void quick_sort (Line lines_array[], int low, int high, ComparatorPtr comparator);
 
-int part_it (Line lines_array[], int low, int high, ComparatorLink comparator);
+int part_it (Line lines_array[], int low, int high, ComparatorPtr comparator);
 
 int reverse_strcmp (const void *ptr1, const void *ptr2);
 
@@ -37,7 +37,7 @@ void skip_none_letters (char **str_ptr);
 
 int forward_strcmp (const void *ptr1, const void *ptr2);
 
-void swap_elems (void *ptr1, void *ptr2);
+void swap_elems (void *ptr1, void *ptr2, size_t len);
 
 //-----------------------------------------------------------------------------
 

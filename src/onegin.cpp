@@ -7,7 +7,7 @@ static char INPUT_NAME[50]   = "data//input.txt";
 
 static char OUTPUT_NAME[50]  = "data//output.txt";
 
-static int  SORT_MODE        = QUICK_SORT;
+static int  SORT_MODE        = BUBBLE_SORT;
 
 //-----------------------------------------------------------------------------
 
@@ -19,27 +19,23 @@ int start_onegin()
     assert(input_file != nullptr && output_file != nullptr);
 
     Text MainText = {};
-    MainText.buffer = nullptr;
-    MainText.symbols_amount = 0;
-    MainText.lines_amount = 0;
-    MainText.lines_array = nullptr;
 
-    MainText.symbols_amount = read_file (input_file, &(MainText.buffer));
+    read_file (input_file, &MainText);
 
-    calloc_lines_array(MainText.buffer, &(MainText.lines_array), MainText.symbols_amount);
+    calloc_lines_array (&MainText);
 
-    MainText.lines_amount = separate_lines (MainText.buffer, MainText.lines_array, MainText.symbols_amount);
+    separate_lines (&MainText);
 
-    trim_left (MainText.lines_array, MainText.lines_amount);
+    trim_left (&MainText);
 
-    write_result_in_file   (MainText.lines_array, MainText.lines_amount, output_file);
+    write_result_in_file   (&MainText, output_file);
 
-    sort_and_write_in_file (MainText.lines_array, MainText.lines_amount, forward_strcmp, output_file);
+    sort_and_write_in_file (&MainText, forward_strcmp, output_file);
 
-    sort_and_write_in_file (MainText.lines_array, MainText.lines_amount, reverse_strcmp, output_file);
+    sort_and_write_in_file (&MainText, reverse_strcmp, output_file);
 
-    free   (MainText.buffer);
-    free   (MainText.lines_array);
+    MainTextDestr (&MainText);
+
     fclose (input_file);
     fclose (output_file);
 
@@ -47,13 +43,14 @@ int start_onegin()
 }
 
 
-void calloc_lines_array(char *buffer, Line **lines_array, int symbols_read)
+void calloc_lines_array (Text *MainText)
+
 {
-    assert (buffer != nullptr);
+    assert (MainText->buffer != nullptr);
 
     __TRACKBEGIN__
 
-    *lines_array = (Line*) calloc(sizeof(Line), count_lines (buffer, symbols_read));
+    MainText->lines_array = (Line*) calloc (sizeof(Line), count_lines (MainText->buffer, MainText->symbols_amount));
 
     __TRACKEND__
     return;
@@ -67,7 +64,7 @@ int count_lines (char *buffer, int symbols_read)
 
     int line_counter = 0;
 
-    for (;cur_ptr != end_ptr; cur_ptr++)
+    for (; cur_ptr != end_ptr; cur_ptr++)
     {
         if (*cur_ptr == '\n') line_counter++;
         printf("%c", *cur_ptr);
@@ -77,38 +74,38 @@ int count_lines (char *buffer, int symbols_read)
 }
 
 
-void sort_and_write_in_file(Line lines_array[], int line_amount, ComparatorLink comparator, FILE* output_file)
+void sort_and_write_in_file (Text *MainText, ComparatorPtr comparator, FILE* output_file)
 {
     __TRACKBEGIN__
 
     switch (SORT_MODE)
     {
         case BUBBLE_SORT:
-            bubble_sort (lines_array, line_amount, sizeof(Line), comparator);
+            bubble_sort (MainText->lines_array, MainText->lines_amount, sizeof(Line), comparator);
             break;
 
         case QUICK_SORT:
             //quick_sort  (lines_array, 0, line_amount - 1, comparator);
-            qsort (lines_array, line_amount, sizeof(Line), comparator);
+            qsort (MainText->lines_array, MainText->lines_amount, sizeof(Line), comparator);
             break;
 
         default:
             break;
     }
 
-    print_lines (lines_array, line_amount);
+    print_lines (MainText->lines_array, MainText->lines_amount);
 
-    write_result_in_file (lines_array, line_amount, output_file);
+    write_result_in_file (MainText, output_file);
 
     __TRACKEND__
 }
 
 
-void write_result_in_file (Line lines_array[], int lines_amount, FILE* output_file)
+void write_result_in_file (Text *MainText, FILE* output_file)
 {
-    for (int i = 0; i < lines_amount; i++)
+    for (int i = 0; i < MainText->lines_amount; i++)
     {
-        fputs (lines_array[i].begin_ptr, output_file);
+        fputs (MainText->lines_array[i].begin_ptr, output_file);
         fputc ('\n', output_file);
     }
 
@@ -116,37 +113,40 @@ void write_result_in_file (Line lines_array[], int lines_amount, FILE* output_fi
 }
 
 
-int separate_lines (char *buffer, Line lines_array[], int symbols_read)
+int separate_lines (Text *MainText)
+
 {
-    assert (buffer != nullptr);
-    assert (lines_array != NULL);
-    assert (symbols_read > 0);
+    assert (MainText->buffer != nullptr);
+    assert (MainText->lines_array != NULL);
+    assert (MainText->symbols_amount > 0);
 
     int lines_indx = 0, cur_len = 0;
 
-    char *cur_ptr = buffer;
+    char *cur_ptr = MainText->buffer;
 
-    char* end_ptr = cur_ptr + symbols_read;
+    char *end_ptr = cur_ptr + MainText->symbols_amount;
 
-    for (;cur_ptr != end_ptr; cur_ptr++)
+    for (; cur_ptr != end_ptr; cur_ptr++)
     {
         cur_len++;
                                                                                              //01234
         if (*cur_ptr == '\n')                                                                //abcd\ndef\n
         {                                                                                    //\n
-            if (cur_len > 1)                                                                 //abacaba
+            if (cur_len > 1) // ignore "\n"
             {
-                lines_array[lines_indx].begin_ptr = cur_ptr - cur_len + 1;
-                lines_array[lines_indx].length    = cur_len;
+                MainText->lines_array[lines_indx].begin_ptr = cur_ptr - cur_len + 1;
+                MainText->lines_array[lines_indx].length    = cur_len;
                 *cur_ptr = '\0';
                 lines_indx++;
             }
+
             cur_len = 0;
         }
     }
 
+    MainText->lines_amount = lines_indx;
 
-    return lines_indx;
+    return 1;
 }
 
 
@@ -164,22 +164,26 @@ void print_lines (Line lines_array[], int lines_amount)
 }
 
 
-void trim_left (Line lines_array[], int lines_amount)
-{
-    printf ("Lines amount: %d\n", lines_amount);
+void trim_left (Text *MainText)
 
-    for (int i = 0; i < lines_amount; i++)
+{
+    printf ("Lines amount: %d\n", MainText->lines_amount);
+
+    for (int i = 0; i < (MainText->lines_amount); i++)
     {
-        while (!isalpha(*lines_array[i].begin_ptr))
+        while (!isalpha (*(MainText->lines_array[i].begin_ptr)))
         {
-            lines_array[i].begin_ptr++;
-            //printf ("Trimming left sym\n");
+            MainText->lines_array[i].begin_ptr++;
         }
     }
 }
 
 
-
+void MainTextDestr (Text *self)
+{
+    free (self->buffer);
+    free (self->lines_array);
+}
 
 
 int change_input_name (int argc, const char* argv[], int pos)
@@ -241,6 +245,7 @@ int change_output_name (int argc, const char* argv[], int pos)
                     printf ("Too much additional arguments\n");
             }
         }
+
         else
         {
             break;
@@ -286,6 +291,8 @@ int choose_sort (int argc, const char* argv[], int pos)
 
     return skip_args;
 }
+
+
 
 
 
