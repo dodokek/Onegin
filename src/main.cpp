@@ -3,17 +3,18 @@
 #include "include/argument_proccessing.h"
 #include "include/log.h"
 
-// Command line arguments
-
 #define ADD_OPT(option_name, func_name) {option_name, func_name},
-// main_opt.mac
 
+<<<<<<< HEAD
 // ADD_OPT("--log", open_log)
 // ADD_OPT("l", open_log)
+=======
+>>>>>>> normalversion
 
 const OptionDef Options[] =
 {
-    // #include "main_opt.mac"
+    //#include "include/main_opt.h"
+
     {"--log",      open_log},
     {"-l",         open_log},
     {"/l",         open_log},
@@ -40,9 +41,11 @@ const OptionDef Options[] =
 
 int main(int argc, const char *argv[])
 {
-    process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+    GeneralVariables MainVariables = {"data/hamlet.txt", "data/default_output.txt", BUBBLE_SORT};
 
-    start_onegin();
+    process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]), &MainVariables);
+
+    start_onegin(&MainVariables);
 }
 
 

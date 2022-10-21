@@ -15,27 +15,38 @@
 #include "log.h"
 #include "argument_proccessing.h"
 
-int start_onegin();
+//-----------------------------------------------------------------------------
 
-int separate_lines (char *buffer, Line lines_array[], int symbols_read);
+struct Text
+{
+    char *buffer;
+    int  symbols_amount;
+    int  lines_amount;
+    Line *lines_array;
+};
+
+
+int start_onegin (GeneralVariables *MainVariables);
+
+int separate_lines (Text *MainText);
 
 void print_single_line (Line *cur_line);
 
 void print_lines (Line lines_array[], int line_amount);
 
-void trim_left (Line lines_array[], int lines_amount);
+void trim_left (Text *MainText);
 
 void trim_right (Line lines_array[], int lines_amount);
 
-void write_result_in_file (Line lines_array[], int lines_amount, FILE* output_file);
+void write_result_in_file (Text *MainText, FILE* output_file);
 
-void calloc_lines_array(char *buffer, Line **lines_array, int symbols_read);
+void calloc_lines_array (Text *MainText);
 
-int change_input_name (int argc, const char* argv[], int pos);
+void sort_and_write_in_file (Text *MainText, ComparatorPtr comparator, FILE* output_file, int sort_mode);
 
-int change_output_name (int argc, const char* argv[], int pos);
+int count_lines (char *buffer, int symbols_read);
 
-int choose_sort (int argc, const char* argv[], int pos);
+void MainTextDestr(Text *self);
 
 void sort_and_write_in_file(Line lines_array[], int line_amount, VoidComp comparator, FILE* output_file);
 
@@ -43,12 +54,8 @@ void get_stat_parse_file (char *buffer, Line **lines_array, int symbols_read, in
 
 //-----------------------------------------------------------------------------
 
-enum sorting_modes
-{
-    BUBBLE_SORT = 1,
-    QUICK_SORT  = 2,
-    MERGE_SORT       // Ha-ha, sometimes
-};
+
+
 
 #endif
 

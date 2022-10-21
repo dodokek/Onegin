@@ -4,6 +4,7 @@
 #include <string.h>
 
 //Global/Const-----------------------------------------------------------------
+// static
 
 FILE* LOG_FILE = nullptr;
 
@@ -23,10 +24,11 @@ int SPACING = 0;
 
 void add_tree_level (const char* func_name)
 {
-    // const int tab_size =
+    const int tab_size = 4;
+
     fprintf    (LOG_FILE, "%25s:%03d ", __FILE__, __LINE__);
     fputc      ('|', LOG_FILE);
-    put_spaces (SPACING++ * 4);
+    put_spaces (SPACING++ * tab_size);
 
     LOG_FUNC   ("%s >>>\n", func_name);
 }
@@ -34,16 +36,14 @@ void add_tree_level (const char* func_name)
 
 void substract_tree_level (const char* func_name)
 {
+    const int tab_size = 4;
+
     fprintf    (LOG_FILE, "%25s:%03d ", __FILE__, __LINE__);
     fputc      ('|', LOG_FILE);
-    put_spaces (--SPACING * 4);
+    put_spaces (--SPACING * tab_size);
 
     LOG_FUNC   ("%s <<<\n", func_name);
 }
-
-
-//  void
-//  int
 
 
 bool get_log_file (char file_name[])
@@ -71,7 +71,7 @@ bool get_log_file (char file_name[])
 }
 
 
-int open_log (int argc, const char* argv[], int pos)
+int open_log (int argc, const char* argv[], int pos, void* VariableStruct)
 {
     char file_name[] = "";
     int skip_args = 0;
@@ -129,7 +129,6 @@ void finish_log()
 }
 
 
-// space_amount
 void put_spaces (int spaces_amount)
 {
     fprintf (LOG_FILE, "%*s", spaces_amount, " ");

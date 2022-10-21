@@ -1,5 +1,6 @@
 #Excluding chunky files
 /html
+/.git-auto
 
 
 #excluding trash

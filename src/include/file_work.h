@@ -7,15 +7,21 @@
 #include <string.h>
 #include <assert.h>
 
-//-----------------------------------------------------------------------------
-
-const char default_input_name[]  = "data//input.txt";
-const char default_output_name[] = "data//output.txt";
+#include "onegin.h"
 
 //-----------------------------------------------------------------------------
 
+<<<<<<< HEAD
 FILE* get_file  (const char* file_name, const char* mode);
+=======
+static const char default_input_name[]  = "data//input.txt";
+static const char default_output_name[] = "data//output.txt";
+>>>>>>> normalversion
 
-int read_file (FILE *file, char **buffer);
+//-----------------------------------------------------------------------------
+
+FILE* get_file (const char file_name[], const char* mode);
+
+int read_file (FILE* file, struct Text *MainText);
 
 #endif

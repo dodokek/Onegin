@@ -3,7 +3,7 @@
 
 //-----------------------------------------------------------------------------
 
-FILE* get_file(const char* file_name, const char* mode)
+FILE* get_file (const char file_name[], const char* mode)
 {
     FILE* tmp_file = fopen(file_name, mode);
 
@@ -19,7 +19,7 @@ FILE* get_file(const char* file_name, const char* mode)
 }
 
 
-int read_file(FILE* file, char **buffer)
+int read_file (FILE* file, Text *MainText)
 {
     assert (file != nullptr);
 
@@ -27,9 +27,9 @@ int read_file(FILE* file, char **buffer)
     int file_len = ftell (file);
     fseek (file, 0L, SEEK_SET);
 
-    *buffer = (char*) calloc(sizeof(char), file_len);
-    int symbols_read = fread (*buffer, sizeof(char), file_len, file);
+    MainText->buffer = (char*) calloc(sizeof(char), file_len);
+    MainText->symbols_amount = fread (MainText->buffer, sizeof(char), file_len, file);
 
-    return symbols_read;
+    return 1;
 }
 

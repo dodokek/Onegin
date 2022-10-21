@@ -3,6 +3,7 @@
 
 //-----------------------------------------------------------------------------
 
+<<<<<<< HEAD
 void bubble_sort (void *ptr, size_t count, int size, VoidComp comp)
 {
     __TRACKBEGIN__
@@ -21,6 +22,26 @@ void bubble_sort (void *ptr, size_t count, int size, VoidComp comp)
             if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
             {
                 swap_elems (&(cur_ptr + lap * size), &(cur_ptr + (lap + 1) * size));
+=======
+void bubble_sort (void *ptr, int counter, int size_, ComparatorPtr comparator) 
+{
+    __TRACKBEGIN__
+
+    printf ("Using bubble sort.\n");
+
+    char *arr = (char*) ptr;
+
+    for (int i = 0; i < counter; i++)
+    {
+        for (int lap = 0; lap < counter - i - 1; lap++)
+        {
+            void *elem1 = arr + size_ * lap;
+            void *elem2 = arr + size_ * (lap + 1);
+
+            if (comparator (elem1, elem2) > 0)
+            {
+                swap_elems (elem1, elem2, size_);
+>>>>>>> normalversion
             }
         }
     }
@@ -28,9 +49,12 @@ void bubble_sort (void *ptr, size_t count, int size, VoidComp comp)
     __TRACKEND__
 }
 
-// I don't fucking know how the hell does this algorithm works, man.
 
+<<<<<<< HEAD
 void quick_sort(Line lines_array[], int low, int high, VoidComp comparator)
+=======
+void quick_sort(Line lines_array[], int low, int high, ComparatorPtr comparator)
+>>>>>>> normalversion
 {
     __TRACKBEGIN__
 
@@ -51,12 +75,20 @@ void quick_sort(Line lines_array[], int low, int high, VoidComp comparator)
 }
 
 
+<<<<<<< HEAD
 int part_it(Line lines_array[], int low, int high, VoidComp comparator)
+=======
+int part_it(Line lines_array[], int low, int high, ComparatorPtr comparator)
+>>>>>>> normalversion
 {
     __TRACKBEGIN__
     __TRACKEND__
 
     Line pivot = lines_array[low];
+<<<<<<< HEAD
+=======
+
+>>>>>>> normalversion
     int i = low - 1;
     int j = high + 1;
 
@@ -73,6 +105,7 @@ int part_it(Line lines_array[], int low, int high, VoidComp comparator)
         if (i >= j)
             return j;
 
+<<<<<<< HEAD
         swap_elems(&(lines_array + i), &(lines_array + j));
     }
 
@@ -88,6 +121,27 @@ int forward_comparator(const void* ptr1, const void* ptr2)
            line_first->begin_ptr, line_second->begin_ptr);
 
     return strcmp (line_first->begin_ptr, line_second->begin_ptr);
+=======
+        swap_elems(&lines_array[i], &lines_array[j], sizeof(Line));
+    }
+}
+
+
+int reverse_strcmp (const void *ptr1, const void *ptr2)
+{
+    Line *Line_first = (Line*) ptr1;
+    Line *Line_second = (Line*) ptr2;
+
+    char *str_first  = Line_first->begin_ptr;
+    char *str_second = Line_second->begin_ptr;
+
+    int  len_first   = Line_first->length;
+    int  len_second  = Line_second->length;
+
+
+    char *cur_ptr_1 = str_first  + len_first  - 1; // get end of line
+    char *cur_ptr_2 = str_second + len_second - 1;
+>>>>>>> normalversion
 
 }
 
@@ -116,6 +170,7 @@ int reverse_comparator(const void* ptr1, const void* ptr2)
         if (*cur_ptr_1 > *cur_ptr_2) return 1;
         if (*cur_ptr_1 < *cur_ptr_2) return -1;
 
+<<<<<<< HEAD
         cur_ptr_1--, cur_ptr_2--;
     }
 
@@ -163,5 +218,48 @@ void skip_not_letters (char **str_ptr)
 
         (*str_ptr)--;
     }
+=======
+        cur_ptr_1--;
+        cur_ptr_2--;
+
+        continue;
+    }
+
+    return 0;
+}
+
+void skip_none_letters (char **str_ptr)
+{
+    while (true)
+    {
+        if (isalpha(**str_ptr)) break;
+
+        (*str_ptr)--;
+    }
+}
+
+
+int forward_strcmp (const void *ptr1, const void *ptr2)
+{
+    Line *Line_first  = (Line*) ptr1;
+    Line *Line_second = (Line*) ptr2;
+
+    return strcmp (Line_first->begin_ptr, Line_second->begin_ptr);
+}
+
+
+void swap_elems (void *ptr1, void *ptr2, size_t len)
+{
+    char *elem1 = (char*) ptr1;
+    char *elem2 = (char*) ptr2;
+    char tmp = 0;
+
+    for (size_t i = 0; i != len; ++i)
+    {
+        tmp = elem1[i];
+        elem1[i] = elem2[i];
+        elem2[i] = tmp;
+    }
+>>>>>>> normalversion
 }
 
