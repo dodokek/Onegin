@@ -11,12 +11,8 @@
 
 //-----------------------------------------------------------------------------
 
-<<<<<<< HEAD
-FILE* get_file  (const char* file_name, const char* mode);
-=======
 static const char default_input_name[]  = "data//input.txt";
 static const char default_output_name[] = "data//output.txt";
->>>>>>> normalversion
 
 //-----------------------------------------------------------------------------
 

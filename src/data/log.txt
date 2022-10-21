@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 Started logging...
                   log.cpp:029 | calloc_lines_array >>>
                   log.cpp:041 | calloc_lines_array <<<
@@ -13,4 +11,3 @@ Started logging...
                   log.cpp:041 | sort_and_write_in_file <<<
 Finishing logging... Goodluck in debugging :)
 
->>>>>>> normalversion

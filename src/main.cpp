@@ -5,11 +5,6 @@
 
 #define ADD_OPT(option_name, func_name) {option_name, func_name},
 
-<<<<<<< HEAD
-// ADD_OPT("--log", open_log)
-// ADD_OPT("l", open_log)
-=======
->>>>>>> normalversion
 
 const OptionDef Options[] =
 {

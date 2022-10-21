@@ -3,26 +3,6 @@
 
 //-----------------------------------------------------------------------------
 
-<<<<<<< HEAD
-void bubble_sort (void *ptr, size_t count, int size, VoidComp comp)
-{
-    __TRACKBEGIN__
-
-    char* cur_ptr = (char*) ptr;
-
-    fprintf ( stderr, "Bubble sort\n");
-    fprintf ( stderr, "Begin ptr %s, Line size %d\n", cur_ptr->begin_ptr, sizeof(Line));
-    fprintf ( stderr, "Next ptr %p\n", cur_ptr + 1 * sizeof(Line));
-    fprintf ( stderr, "Begin ptr %s, Line size %d\n", (cur_ptr + 1 * sizeof(Line))->begin_ptr, sizeof(Line));
-
-    for (int i = 0; i < int(count); i++)
-    {
-        for (int lap = 0; lap < int(count) - i - 1; lap++)
-        {
-            if (comp (cur_ptr + lap * size, cur_ptr + (lap + 1) * size))
-            {
-                swap_elems (&(cur_ptr + lap * size), &(cur_ptr + (lap + 1) * size));
-=======
 void bubble_sort (void *ptr, int counter, int size_, ComparatorPtr comparator) 
 {
     __TRACKBEGIN__
@@ -41,7 +21,6 @@ void bubble_sort (void *ptr, int counter, int size_, ComparatorPtr comparator)
             if (comparator (elem1, elem2) > 0)
             {
                 swap_elems (elem1, elem2, size_);
->>>>>>> normalversion
             }
         }
     }
@@ -50,11 +29,7 @@ void bubble_sort (void *ptr, int counter, int size_, ComparatorPtr comparator)
 }
 
 
-<<<<<<< HEAD
-void quick_sort(Line lines_array[], int low, int high, VoidComp comparator)
-=======
 void quick_sort(Line lines_array[], int low, int high, ComparatorPtr comparator)
->>>>>>> normalversion
 {
     __TRACKBEGIN__
 
@@ -75,20 +50,12 @@ void quick_sort(Line lines_array[], int low, int high, ComparatorPtr comparator)
 }
 
 
-<<<<<<< HEAD
-int part_it(Line lines_array[], int low, int high, VoidComp comparator)
-=======
 int part_it(Line lines_array[], int low, int high, ComparatorPtr comparator)
->>>>>>> normalversion
 {
     __TRACKBEGIN__
     __TRACKEND__
 
     Line pivot = lines_array[low];
-<<<<<<< HEAD
-=======
-
->>>>>>> normalversion
     int i = low - 1;
     int j = high + 1;
 
@@ -105,23 +72,6 @@ int part_it(Line lines_array[], int low, int high, ComparatorPtr comparator)
         if (i >= j)
             return j;
 
-<<<<<<< HEAD
-        swap_elems(&(lines_array + i), &(lines_array + j));
-    }
-
-}
-
-
-int forward_comparator(const void* ptr1, const void* ptr2)
-{
-    const Line* line_first  = (const Line*) ptr1;
-    const Line* line_second = (const Line*) ptr2;
-
-    printf("====\nFirst line: %s, Second line: %s\n====\n",
-           line_first->begin_ptr, line_second->begin_ptr);
-
-    return strcmp (line_first->begin_ptr, line_second->begin_ptr);
-=======
         swap_elems(&lines_array[i], &lines_array[j], sizeof(Line));
     }
 }
@@ -141,7 +91,6 @@ int reverse_strcmp (const void *ptr1, const void *ptr2)
 
     char *cur_ptr_1 = str_first  + len_first  - 1; // get end of line
     char *cur_ptr_2 = str_second + len_second - 1;
->>>>>>> normalversion
 
 }
 
@@ -170,55 +119,6 @@ int reverse_comparator(const void* ptr1, const void* ptr2)
         if (*cur_ptr_1 > *cur_ptr_2) return 1;
         if (*cur_ptr_1 < *cur_ptr_2) return -1;
 
-<<<<<<< HEAD
-        cur_ptr_1--, cur_ptr_2--;
-    }
-
-    return 0;
-
-}
-
-
-//
-
-int forward_strcmp(char *str_first, int /*len_first*/, char *str_second, int /*len_second*/)
-{
-    __TRACKBEGIN__
-
-    assert(str_first != NULL && str_second != NULL);
-
-
-
-    __TRACKEND__
-
-    return 0;
-
-}
-
-
-void swap_elems(void **line_1, void **line_2)
-{
-    __TRACKBEGIN__
-
-    void **tmp = line_1;
-
-    *line_1 = *line_2;
-
-    *line_2 = *tmp;
-
-    __TRACKEND__
-}
-
-
-void skip_not_letters (char **str_ptr)
-{
-    while (true)
-    {
-        if (isalpha(**str_ptr)) return;
-
-        (*str_ptr)--;
-    }
-=======
         cur_ptr_1--;
         cur_ptr_2--;
 
@@ -260,6 +160,5 @@ void swap_elems (void *ptr1, void *ptr2, size_t len)
         elem1[i] = elem2[i];
         elem2[i] = tmp;
     }
->>>>>>> normalversion
 }
 
