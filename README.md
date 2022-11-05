@@ -19,7 +19,7 @@ Strings are being sorted by their beginnings, empty lines are ignored automaticl
 ~~~
 main.exe -f
 ~~~
-### Backward sorting (Coming soon)
+### Backward sorting
 Strings are being sorted by their end, excluding symbols such as '!', ';', etc.
 ~~~
 main.exe -b
