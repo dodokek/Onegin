@@ -51,5 +51,3 @@ main.exe -l -1 #BubbleSort
 main.exe -l -2 #QuickSort
 ~~~
 
-## Conclusion
-Very soon this programm will be able to sort lines according to their and, moreover it will be a generator of true poems(Bredogenerator).
